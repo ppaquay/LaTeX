@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Approximation des nombres rationnels à l'aide des convergents</TITLE>
+<META NAME="description" CONTENT="Approximation des nombres rationnels à l'aide des convergents">
+<META NAME="keywords" CONTENT="ArticleMP">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ArticleMP.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="ArticleMP.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html61"
+  HREF="ArticleMP.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html55"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html64"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<B> monter:</B> <A NAME="tex2html62"
+  HREF="ArticleMP.html">Petite étude des fractions</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html56"
+  HREF="node3.html">Définitions et propriétés fondamentales</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+Approximation des nombres rationnels à l'aide des convergents</A>
+</H1>
+
+<P>
+Nous allons maintenant voir que le terme `convergent' a été bien choisi et que ces convergents constituent bien une façon d'approcher un nombre rationnel. Pour faciliter le calcul des convergents, on dispose des formules de récurrence suivantes.
+
+<P>
+<BR>
+<A NAME="Conv"></A><IMG
+ WIDTH="555" HEIGHT="326" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="\begin{Pro}
+{Si on définit les entiers $p_0,p_1,\cdots,p_n$\ et $q_0,q_1,\cdots,...
+...le n$. En particulier, on a $\pgcd(p_k,q_k) = 1$\ pour $0\le k\le n$.}
+\end{Pro}">
+<BR>
+
+<P>
+Prouvons ce fait en procédant par récurrence. Si <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$k = 0$">, alors <!-- MATH
+ $p_0/q_0 = a_0 = c_0$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$p_0/q_0 = a_0 = c_0$"> et si <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$k = 1$">, alors <!-- MATH
+ $p_1/q_1 = a_0 + 1/a_2 = c_1$
+ -->
+<IMG
+ WIDTH="179" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$p_1/q_1 = a_0 + 1/a_2 = c_1$">.
+
+<P>
+Supposons maintenant le résultat vrai pour <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.png"
+ ALT="$k$"> et montrons qu'il reste valide pour <IMG
+ WIDTH="44" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$k + 1$">. Il vient
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+[a_0,a_1,\cdots,a_k,a_{k+1}] &= &\left[a_0,a_1,\cdots,a_k + \frac{1}{a_{k+1}}\right] \\
+& = &\frac{\left(a_k + \frac{1}{a_{k+1}}\right)p_{k-1} + p_{k-2}}{\left(a_k + \frac{1}{a_{k+1}}\right)q_{k-1} + q_{k-2}} \\
+&= &\frac{a_{k+1}(a_kp_{k-1} + p_{k-2}) + p_{k-1}}{a_{k+1}(a_kq_{k-1} + q_{k-2}) + q_{k-1}} \\
+&= &\frac{a_{k+1}p_k + p_{k-1}}{a_{k+1}q_k + q_{k-1}},
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="406" HEIGHT="214" BORDER="0"
+ SRC="img41.png"
+ ALT="\begin{eqnarray*}[a_0,a_1,\cdots,a_k,a_{k+1}]&amp;= &amp;\left[a_0,a_1,\cdots,a_k + \fra...
+...k-1}} \\
+&amp;= &amp;\frac{a_{k+1}p_k + p_{k-1}}{a_{k+1}q_k + q_{k-1}},
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+par l'hypothèse de récurrence, ce qui suffit.
+
+<P>
+Procédons ici aussi par récurrence. Si <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$k = 0$">, alors
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p_0q_1 - q_0p_1 = -1.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="134" HEIGHT="30" BORDER="0"
+ SRC="img42.png"
+ ALT="\begin{displaymath}p_0q_1 - q_0p_1 = -1.\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Supposons maintenant ce résultat vrai pour <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.png"
+ ALT="$k$"> et montrons qu'il reste valide pour <IMG
+ WIDTH="44" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$k + 1$">. On a
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+p_{k+1}q_{k+2} - q_{k+1}p_{k+2} &= &p_{k+1}(a_{k+2}q_{k+1} + q_k) - q_{k+1}(a_{k+2}p_{k+1} + p_k) \\
+&= &-(p_kq_{k+1} - q_kp_{k+1}) \\
+&= &(-1)^{k+2},
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="529" HEIGHT="84" BORDER="0"
+ SRC="img43.png"
+ ALT="\begin{eqnarray*}
+p_{k+1}q_{k+2} - q_{k+1}p_{k+2} &amp;= &amp;p_{k+1}(a_{k+2}q_{k+1} + q...
+...1} + p_k) \\
+&amp;= &amp;-(p_kq_{k+1} - q_kp_{k+1}) \\
+&amp;= &amp;(-1)^{k+2},
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+ce qui prouve la seconde partie de l'énoncé. De plus, il suffit de remarquer que si <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$d$"> divise <IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$p_k$"> et <IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$q_k$">, alors <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$d$"> divise aussi <!-- MATH
+ $p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}$
+ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}$">, ce qui revient à exiger que <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.png"
+ ALT="$d = 1$">.
+
+<P>
+Dès lors, si on reprend l'exemple précédent avec <IMG
+ WIDTH="48" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$24/13$"> et si on uitilise les formules de récurrence<A NAME="tex2html4"
+  HREF="footnode.html#foot178"><SUP>2</SUP></A> ci-dessus, on constate que les convergents valent respectivement
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+c_0 = \frac{1}{1}, c_1 = \frac{2}{1}, c_2 = \frac{5\times 2 + 1}{5\times 1 + 1} = \frac{11}{6}\mbox{ et }c_3 = \frac{2\times 11 + 2}{2\times 6 + 1} = \frac{24}{13},
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="466" HEIGHT="43" BORDER="0"
+ SRC="img49.png"
+ ALT="\begin{displaymath}c_0 = \frac{1}{1}, c_1 = \frac{2}{1}, c_2 = \frac{5\times 2 +...
+...et }c_3 = \frac{2\times 11 + 2}{2\times 6 + 1} = \frac{24}{13},\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+ce qui donne <IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$c_0 = 1$">, <IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$c_1 = 2$">, <!-- MATH
+ $c_2 = 1.8333...$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$c_2 = 1.8333...$"> et <!-- MATH
+ $c_3 = 1.84615...$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$c_3 = 1.84615...$">, ce qui constitue effectivement une suite d'approximations de <IMG
+ WIDTH="48" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$24/13$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html61"
+  HREF="ArticleMP.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html55"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html64"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<B> monter:</B> <A NAME="tex2html62"
+  HREF="ArticleMP.html">Petite étude des fractions</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html56"
+  HREF="node3.html">Définitions et propriétés fondamentales</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2005-09-23
+</ADDRESS>
+</BODY>
+</HTML>

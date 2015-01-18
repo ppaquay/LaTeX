@@ -1,0 +1,89 @@
+\catcode`\é=\active \def é{\'e}
+\catcode`\è=\active \def è{\`e}
+\catcode`\ë=\active \def ë{\" e}
+\catcode`\à=\active \def à{\`a}
+\catcode`\ê=\active \def ê{\^e}
+\catcode`\â=\active \def â{\^a}
+\catcode`\ô=\active \def ô{\^o}
+\catcode`\û=\active \def û{\^u}
+\catcode`\î=\active \def î{\^\i}
+\catcode`\ï=\active \def ï{\"\i}
+\catcode`\ù=\active \def ù{\`u}
+\catcode`\ç=\active \def ç{\c c}
+\catcode`\ü=\active \def ü{\" u}
+
+\newtheorem {Def}[subsection]{D\'efinition}
+\newtheorem {Defs}[subsection]{D\'efinitions}
+\newtheorem {Lem}[subsection]{Lemme}
+\newtheorem {The}[subsection]{Th\'eor\`eme}
+\newtheorem {Pro}[subsection]{Proposition}
+\newtheorem {Exp}[subsection]{Exemple}
+\newtheorem {Exps}[subsection]{Exemples}
+\newtheorem {Alg}[subsection]{Algorithme}
+\newtheorem {Cor}[subsection]{Corollaire}
+\newtheorem {Rmq}[subsection]{Remarque}
+\newtheorem {Rmqs}[subsection]{Remarque}
+\newtheorem {Not}[subsection]{Notation}
+\newtheorem {Axi}[subsection]{Axiome}
+
+\def\mod{\mathop{\rm mod}}
+\def\scal#1#2{\langle{#1},{#2}\rangle}             	% Produit scalaire
+\def\dyade#1#2{\rangle{#1},{#2}\langle}            	% Dyade
+\def\envl#1{\rangle{#1}\langle}		    	% Enveloppe lineaire
+\def\envc#1{\langle\langle{#1}\rangle\rangle} 	% Enveloppe convexe
+\def\ker#1{\mathop{\rm ker}({#1})}              	% Kernel
+\def\im#1{\mathop{\rm im}({#1})}        		% Image
+\def\rang#1{\mathop{\rm rg}({#1})}     		% Rang(...)
+\def\rg{\mathop{\rm rg}}    			% Rang
+\def\det#1{\mathop{\rm det}({#1})}        		% Determinant
+\def\dtm{\mathop{\rm det}}        			% Determinant
+\def\tr#1{\mathop{\rm tr}({#1})}             		% Trace
+\def\Dim#1{\mathop{\rm dim}({#1})}              	% Dimension
+\def\dim{\mathop{\rm dim}}  			% Dimension
+\def\codim#1{\mathop{\rm codim}({#1})}            	% codimension
+\def\vide{\mathop{\mbox{\O}}}			% Ensemble vide
+\def\grad{\mathop{\rm grad}}			% Gradiant
+\def\diverg{\rm div}      				% Divergence
+\def\diag{\mathop{\rm diag}}			% diagonal matrix
+\def\Diag#1{\mathop{\rm diag}({#1})}		% diagonal matrix
+\def\supp#1{\mathop{\rm supp}({#1})}		% support
+\def\off#1{\mathop{\rm off}({#1})}		% off
+\def\Ai{\mathop{\rm Ai}}			% Ai
+\def\WF{\mathop{\rm WF}}			% WF
+\def\sgn#1{\mathop{\rm sgn}({#1})}		% sign
+\def\modg#1{\left\langle{#1}\right\rangle}	% (1+|x|^2)^{1/2}
+\def\tg{\mathop{\rm tg}\nolimits}    			% tangente
+\def\loc{{\mathop{\rm loc}}}    			% loc
+\def\sh{\mathop{\rm sh}\nolimits}  			% sh
+\def\ch{\mathop{\rm ch}\nolimits}       		% ch
+\def\sp#1{\mathop{\rm sp}({#1})}             		% spectre
+\def\sec{\mathop{\rm sec}\nolimits}  			% sec
+\def\sech{\mathop{\rm sech}\nolimits}  			% sech
+\def\cosec{\mathop{\rm cosec}\nolimits} 		% cosec
+\def\cosech{\mathop{\rm cosech}\nolimits} 		% cosech	
+\def\cis{\mathop{\rm cis}\nolimits}		
+\def\arctg{\mathop{\rm arctg}\nolimits}
+\def\var{\mathop{\rm var}\nolimits}
+\def\cov{\mathop{\rm cov}\nolimits}
+\def\hypo{\mathop{\rm Hypo}\nolimits}
+\def\max{\mathop{\rm max}\nolimits}
+\def\mod{\mathop{\rm mod}\nolimits}
+\def\div{\mathop{\rm div}\nolimits}
+\def\pgcd{\mathop{\rm pgcd}\nolimits}
+\def\ppcm{\mathop{\rm ppcm}\nolimits}
+\def\Orb{\mathop{\rm Orb}\nolimits}
+\def\Stab{\mathop{\rm Stab}\nolimits}
+\def\car#1{\mathop{\rm car}({#1})}
+
+% sup and inf with fixed shift
+% \inf_{\dim{L} = n} remplacŽ par \ysup{\dim{L} = n}
+
+\def\myinf{\mathop{\rule[-0.6ex]{0ex}{2ex}\mbox{\rm inf}}}
+\def\mysup{\mathop{\rule[-0.6ex]{0ex}{2ex}\mbox{\rm sup}}}
+\newcommand{\yinf}[1]{\myinf\limits_{\rule[-1.7ex]{0ex}{3.4ex}{#1}}}
+\newcommand{\ysup}[1]{\mysup\limits_{\rule[-1.7ex]{0ex}{3.4ex}{#1}}}
+
+\def\Exe{{\bf Exemple}}
+\def\Rem{{\bf Remarque}}
+\def\Preuve{\textit{Preuve. }}
+\def\cqfd{$\square$\medskip}

@@ -1,0 +1,409 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage{pierre}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amssymb}
+
+\title{\textbf{Petite étude des fractions continues et leur application à l'équation de Pell}}
+\author{\textbf{P. Paquay, \textsl{HEL - Département pédagogique}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Le mathématicien J. Wallis fut le premier à utiliser le terme de fraction continue dans son \textsl{Arithmetica Infinitorum} (1653), cependant on pourrait faire remonter l'idée des fractions continues aussi loin que l'algorithme d'Euclide puisque nous allons voir que de simples manipulations algébriques des étapes de cet algorithme permettent de faire apparaître des fractions continues.
+
+Dans cet article nous verrons que les fractions continues qui ne semblent être rien de plus que des curiosités mathématiques sont en fait très utiles pour donner une écriture beaucoup plus naturelle des nombres rationnels et même irrationnels. A savoir, une écriture limitée pour les nombres rationnels et illimitée périodique pour les nombres irrationnels quadratiques.
+
+Nous terminerons avec une application historiquement très importante, l'équation de Pell ($x^2 - dy^2 = 1$), que l'on peut résoudre élégamment par fractions continues. Pour illustrer l'importance de l'équation de Pell, nous étudierons le problème du ``Bétail du Soleil'' d'Archimède dont nous verrons que la solution est tout sauf triviale.
+
+L'étude proposée dans cet article n'est en aucun cas exhaustive, les fractions continues et l'équation de Pell possèdent encore beaucoup de propriétés très intéressantes. Notre but dans cet article est, en toute modestie, de fournir un survol de ces théories fascinantes et peut-être de donner l'envie au lecteur de prolonger cette étude.
+
+\section{Un petit problème de géométrie}
+
+Avant d'aborder les fractions continues d'un point de vue plus formel, considérons, en guise de mise en bouche, le petit problème géométrique suivant.
+
+\textit{Comment diviser le rectangle suivant dont la longueur est de $16$ unités et la largeur est de $9$ unités en un nombre exact de carrés non tous égaux au carré unité ?}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Rect1}
+\caption{\textit{Un problème simple ?}}
+\end{center}
+\end{figure}
+
+A première vue, il n'est pas clair que ce problème ait un quelconque rapport avec les fractions continues; pourtant nous allons constater que le simple fait de résoudre ce problème d'une manière tout à fait naturelle met en évidence des fractions continues.
+
+Commençons par faire apparaître un premier carré de côté $9$ unités.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Rect2}
+\end{center}
+\end{figure}
+
+Nous pouvons traduire cela algébriquement par
+\[\frac{16}{9} = 1 + \frac{7}{9};\]
+puisque les côtés de ce rectangle sont dans un ratio $16/9$; en fait cela pourrait s'interprèter par la phrase ``on peut mettre une fois et $7/9$ de fois la largeur dans la longueur''.
+
+Cela ne nous avance guère, mais si nous prolongeons ce raisonnement, nous constatons alors que nous pouvons diviser le rectangle de longueur $9$ unités et de largeur $7$ unités en un carré de côté $7$ unités et un rectangle de longueur $7$ unités et de largeur $2$ unités.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Rect3}
+\end{center}
+\end{figure}
+
+Ce qu'ici encore nous pouvons écrire par
+\begin{eqnarray*}
+\frac{16}{9} &= &1 + \frac{7}{9} \\
+&= &1 + \frac{1}{\displaystyle \frac{9}{7}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{2}{7}}.
+\end{eqnarray*}
+
+En continuant ce processus, on obtient finalement un nombre exact de carrés, à savoir $1 + 1 + 3 + 2 = 7$ carrés, qui divisent notre rectangle de départ. Ce qui constitue bien entendu une solution au problème.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Rect4}
+\caption{\textit{Une solution au problème}}
+\end{center}
+\end{figure}
+
+Algébriquement cela s'interprète par
+\[\frac{16}{9} = 1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 3 + \frac{1}{2}}},\]
+que l'on qualifiera dans la suite de \textit{fraction continue simple finie}.
+
+Cependant ce problème avec les dimensions proposées n'est nullement un cas particulier, en fait il est possible de refaire le même raisonnement pour tout rectangle de dimensions entières\footnote{Cela reste vrai aussi si les dimensions sont rationnelles.}.
+
+\section{Définitions et propriétés fondamentales}
+
+Pour fixer les idées, il est indispensable de donner une définition précise d'une fraction continue.
+
+\begin{Def}{\rm Une \textit{fraction continue finie} est une expression de la forme suivante,
+\[a_0 + \frac{1}{\displaystyle a_1 + \frac{1}{\displaystyle a_1 + \frac{1}{\displaystyle a_2 + \cdots + \frac{1}{\displaystyle a_n}}}}\]
+où $n\ge 0$ et $a_i\in\mathbb{R}$ pour tout $0\le i\le n$.
+
+Si les $a_i\in\mathbb{Z}$ pour tout $0\le i\le n$ et $a_i>0$ pour $0<i\le n$, alors la fraction continue est dite \textit{simple}.}
+\end{Def}
+
+On peut encore écrire cette expression sous la forme plus compacte $[a_0,a_1,\cdots,a_n]$. Les nombres réels $a_i$ sont appelés \textit{quotients partiels} de la fraction continue et les nombres $c_k = [a_0,a_1,\cdots,a_k]$ avec $0\le k\le n$ sont appelés \textit{convergents} de la fraction continue.
+
+Nous savons maintenant ce qu'est une fraction continue, il est clair que l'intérêt de ces objets mathématiques resterait vraiment limité si les expressions du type donné ci-dessus n'apparaissaient que rarement dans la nature. En fait, nous allons voir qu'il est possible d'écrire tout nombre rationnel sous la forme d'une fraction continue. Quelle est la procédure à suivre pour se rendre compte de ce fait, allons-nous devoir utiliser une méthode lourde et compliquée issue de développements récents en théorie des nombres ? 
+
+La réponse à cette question est non, et en fait l'algorithme d'Euclide (300 ACN) est la procédure à utiliser, de plus cette méthode va nous permettre de trouver une écriture sous forme de fraction continue simple du nombre rationnel. Comme un exemple vaut parfois mieux qu'un long discours, voici l'écriture du nombre rationnel $24/13 = 1.84615...$.
+
+Utilisons l'algorithme d'Euclide avec les nombres $24$ et $13$, on obtient successivement les égalités suivantes,
+\begin{eqnarray*}
+24 &= &1\times 13 + 11 \\
+13 &= &1\times 11 + 2 \\
+11 &= &5\times 2 + 1 \\
+2 &= &2\times 1 + 0,
+\end{eqnarray*}
+ce qui nous assure entre autres que $\pgcd(24,13) = 1$; il est alors clair que $24/13 = [1,1,5,2]$. Non ? D'accord, voici une étape supplémentaire,
+\begin{eqnarray*}
+\frac{24}{13} &= &1 + \frac{11}{13} = 1 + \frac{1}{\displaystyle \frac{13}{11}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{2}{11}} = 1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{11}{2}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 5 + \frac{1}{2}}}.
+\end{eqnarray*}
+
+Remarquons alors que l'écriture traditionnelle, en base $10$, du nombre $24/13$ est un nombre décimal illimité périodique, or, puisque l'algorithme d'Euclide fonctionne pour tout entier et se termine toujours, il n'est pas difficile de se rendre compte que les fractions continues nous donnent le moyen d'écrire tout nombre rationnel sous une forme qui est limitée.
+
+A ce niveau de notre exposé, nous sommes capables de donner un algorithme efficace permettant de déterminer l'écriture sous forme de fraction continue simple de tout nombre rationnel.
+
+\begin{Alg}[Fractions continues]{\label{AlgFC}}{Soit $q\in\mathbb{Q}$, les quotients partiels de la fraction continue finie
+\[q = [a_0,a_1,\cdots,a_n]\]
+peuvent être trouvés grâce aux formules de récurrence suivantes
+\[\theta_k = \left\{
+\begin{array}{ll}
+q &\textrm{si }k = 0 \\
+\frac{1}{\theta_{k-1} - a_{k-1}} &\textrm{si }0<k\le n
+\end{array}
+\right.\]
+et
+\[a_k = \lfloor\theta_k\rfloor\]
+avec $0\le k\le n$ et $n$ le plus petit naturel tel que $\theta_n = a_n$.}
+\end{Alg}
+
+La fonction $\lfloor x\rfloor$ ($x\in\mathbb{R}$) est le plus grand entier inférieur ou égal à $x$. L'algorithme ci-dessus résulte simplement d'une reformulation de l'algorithme d'Euclide.
+
+\section{Approximation des nombres rationnels à l'aide des convergents}
+
+Nous allons maintenant voir que le terme `convergent' a été bien choisi et que ces convergents constituent bien une façon d'approcher un nombre rationnel. Pour faciliter le calcul des convergents, on dispose des formules de récurrence suivantes.
+
+\begin{Pro}\label{Conv}{Si on définit les entiers $p_0,p_1,\cdots,p_n$ et $q_0,q_1,\cdots,q_n$ par
+\[p_k = \left\{
+\begin{array}{ll}
+a_0 &\textrm{si }k = 0\\
+a_0a_1 + 1 &\textrm{si }k = 1
+\\ a_kp_{k-1} + p_{k-2} &\textrm{si }2\le k\le n
+\end{array}
+\right.\]
+et
+\[q_k = \left\{
+\begin{array}{ll}
+1 &\textrm{si }k = 0\\
+a_1 &\textrm{si }k = 1
+\\ a_kq_{k-1} + q_{k-2} &\textrm{si }2\le k\le n
+\end{array}
+\right.,\]
+alors on a
+\[c_k = \frac{p_k}{q_k}\]
+pour $0\le k\le n$. De plus, on a
+\[p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}\]
+pour $0\le k\le n$. En particulier, on a $\pgcd(p_k,q_k) = 1$ pour $0\le k\le n$.}
+\end{Pro}
+
+Prouvons ce fait en procédant par récurrence. Si $k = 0$, alors $p_0/q_0 = a_0 = c_0$ et si $k = 1$, alors $p_1/q_1 = a_0 + 1/a_2 = c_1$.
+
+Supposons maintenant le résultat vrai pour $k$ et montrons qu'il reste valide pour $k + 1$. Il vient
+\begin{eqnarray*}
+[a_0,a_1,\cdots,a_k,a_{k+1}] &= &\left[a_0,a_1,\cdots,a_k + \frac{1}{a_{k+1}}\right] \\
+& = &\frac{\left(a_k + \frac{1}{a_{k+1}}\right)p_{k-1} + p_{k-2}}{\left(a_k + \frac{1}{a_{k+1}}\right)q_{k-1} + q_{k-2}} \\
+&= &\frac{a_{k+1}(a_kp_{k-1} + p_{k-2}) + p_{k-1}}{a_{k+1}(a_kq_{k-1} + q_{k-2}) + q_{k-1}} \\
+&= &\frac{a_{k+1}p_k + p_{k-1}}{a_{k+1}q_k + q_{k-1}},
+\end{eqnarray*}
+par l'hypothèse de récurrence, ce qui suffit.
+
+Procédons ici aussi par récurrence. Si $k = 0$, alors
+\[p_0q_1 - q_0p_1 = -1.\]
+
+Supposons maintenant ce résultat vrai pour $k$ et montrons qu'il reste valide pour $k+1$. On a
+\begin{eqnarray*}
+p_{k+1}q_{k+2} - q_{k+1}p_{k+2} &= &p_{k+1}(a_{k+2}q_{k+1} + q_k) - q_{k+1}(a_{k+2}p_{k+1} + p_k) \\
+&= &-(p_kq_{k+1} - q_kp_{k+1}) \\
+&= &(-1)^{k+2},
+\end{eqnarray*}
+ce qui prouve la seconde partie de l'énoncé. De plus, il suffit de remarquer que si $d$ divise $p_k$ et $q_k$, alors $d$ divise aussi $p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}$, ce qui revient à exiger que $d = 1$.\cqfd
+
+Dès lors, si on reprend l'exemple précédent avec $24/13$ et si on uitilise les formules de récurrence\footnote{Remarquons que ces formules font apparaître que les convergents sont toujours des nombres rationnels.} ci-dessus, on constate que les convergents valent respectivement
+\[c_0 = \frac{1}{1}, c_1 = \frac{2}{1}, c_2 = \frac{5\times 2 + 1}{5\times 1 + 1} = \frac{11}{6}\mbox{ et }c_3 = \frac{2\times 11 + 2}{2\times 6 + 1} = \frac{24}{13},\]
+ce qui donne $c_0 = 1$, $c_1 = 2$, $c_2 = 1.8333...$ et $c_3 = 1.84615...$, ce qui constitue effectivement une suite d'approximations de $24/13$.
+
+\section{Approximation des nombres irrationnels à l'aide des convergents}
+
+\subsection{Fractions continues infinies}
+
+Jusqu'ici nous nous sommes contentés de donner l'écriture de nombres rationnels sous forme de fractions continues (simples) et nous avons constaté que cette écriture est finie, mais qu'en est-il des nombres irrationnels, est-il possible de leur donner une écriture sous forme de fraction continue ?
+
+La réponse à cette question est encore positive, cependant cette écriture ne sera évidemment plus finie. Voici donc un premier problème, une fraction continue infinie a-t-elle un sens ? Pour résoudre ce problème, il est nécessaire d'avoir la proposition suivante.
+
+\begin{Pro}{Si $(a_m)_{m\in\mathbb{N}}$ est une suite d'entiers tels que $a_m>0$ pour $m>0$, alors la suite $(c_m)_{m\in\mathbb{N}}$ définie par
+\[c_m = \frac{p_m}{q_m} = [a_0,a_1,\cdots,a_m]\]
+est convergente.}
+\end{Pro} 
+
+Nous pouvons alors donner du sens à la notion de fraction continue infinie grâce à la définition suivante.
+
+\begin{Def}{\rm Soit $(a_m)_{m\in\mathbb{N}}$ une suite d'entiers tels que $a_m>0$ pour $m>0$, on appelle \textit{fraction continue infinie (simple)} toute expression de la forme
+\[\lim_{m\rightarrow\infty}[a_0,a_1,\cdots,a_m].\]
+}
+\end{Def}
+
+On écrit encore cette expression sous la forme $[a_0,a_1,a_2,\cdots]$. Comme dans le cas fini, les nombres $a_m$ sont appelés les \textit{quotients partiels} et les nombres $c_m = [a_0,a_1,\cdots,a_m]$ sont appelés les \textit{convergents} de la fraction continue.
+
+On peut alors prouver qu'il est possible d'écrire tout nombre irrationnel comme une fraction continue infinie. Tout se passe alors pour le mieux et on constate que les convergents ont exactement la signification attendue, à savoir qu'ils convergent vers la fraction continue infinie. Cependant, comment donner une écriture sous forme de fraction continue infinie à un nombre irrationnel ? La solution est encore donnée par l'algorithme d'Euclide, mais appliqué cette fois à des nombres non rationnels, la terminaison de l'algorithme n'est alors plus garantie.
+
+Pour mieux visualiser cela essayons de donner l'écriture sous forme de fraction continue du nombre $\sqrt{3}$. Utilisons alors l'algorithme d'Euclide avec les nombres $\sqrt{3}$ et $1$.
+\begin{eqnarray*}
+\sqrt{3} &= &\underbrace{\lfloor\sqrt{3}\rfloor}_{= 1}\times 1 + (\sqrt{3} - 1) \\
+1 &= &\underbrace{\left\lfloor\frac{1}{\sqrt{3} - 1}\right\rfloor}_{= 1}\times(\sqrt{3} - 1) + \underbrace{(1 - 1\times(\sqrt{3} - 1))}_{= 2 - \sqrt{3}} \\
+\sqrt{3} - 1 &= &\underbrace{\left\lfloor\frac{\sqrt{3} - 1}{2 - \sqrt{3}}\right\rfloor}_{= 2}\times(2 - \sqrt{3}) + \underbrace{(\sqrt{3} - 1 - 2\times(2 - \sqrt{3}))}_{= 3\sqrt{3} - 5} \\
+2 - \sqrt{3} &= &\underbrace{\left\lfloor\frac{2 - \sqrt{3}}{3\sqrt{3} - 5}\right\rfloor}_{= 1}\times(3\sqrt{3} - 5) + \underbrace{(2 - \sqrt{3} - 1\times(3\sqrt{3} - 5))}_{7 - 4\sqrt{3}} \\
+3\sqrt{3} - 5 &= &\underbrace{\left\lfloor\frac{3\sqrt{3} - 5}{7 - 4\sqrt{3}}\right\rfloor}_{= 2}\times(7 - 4\sqrt{3}) + (3\sqrt{3} - 5 - 2\times(7 - 4\sqrt{3})) \\
+7 - 4\sqrt{3} &= &\cdots
+\end{eqnarray*}
+On a alors le développement suivant,
+\begin{eqnarray*}
+\sqrt{3} &= &1 + \frac{1}{\displaystyle \frac{1}{\sqrt{3} - 1}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{\sqrt{3} - 1}{2 - \sqrt{3}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle \frac{2 - \sqrt{3}}{3\sqrt{3} - 5}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{3\sqrt{3} - 5}{7 - 4\sqrt{3}}}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \cdots}}}}.
+\end{eqnarray*}
+Ce qui donne que $\sqrt{3} = [1,1,2,1,2,1,2,\cdots]$. Bien sûr, nous aurions pu trouver les quotients partiels en faisant appel à l'algorithme~\ref{AlgFC}, mais l'utilisation de l'algorithme d'Euclide est plus visuelle\footnote{En fait, ces deux algorithmes sont presque identiques, et au 18-ème siècle, la méthode par les fractions continues fut préférée à celle d'Euclide. Par exemple Gauss ignore complètement Euclide dans ses \textsl{Disquisitiones Arithmetic\ae} (1801) et réfère exclusivement à un algorithme par fractions continues.}.
+
+Les lecteurs attentifs auront sans doute remarqué que le développement en fraction continue de $\sqrt{3}$ présente un motif répétitif, une \textit{période}, qui serait dans notre cas $1,2$, pour attirer l'attention sur ce fait, on écrit la fraction continue par
+\[\sqrt{3} = [1,\overline{1,2}].\]
+Voici un détail intéressant, qui est cependant peut-être le fruit du hasard; examinons pour fixer les idées le développement en fractions continues du `nombre d'or' $\phi = (1 + \sqrt{5})/2$. On obtient, après un développement similaire à celui de $\sqrt{3}$ que
+\[\phi = \frac{1 + \sqrt{5}}{2} = [1,\overline{1}].\]
+Si on calcule les $p_k$ et $q_k$ pour $\phi$, on voit apparaître
+\[p_k = 1,2,3,5,8,13,21,34,55,...\mbox{ et }q_k = 1,1,2,3,5,8,13,21,34,...,\]
+que l'on reconnaît comme étant des nombres de Fibonacci.
+
+Pour le nombre $\phi$ aussi, on détecte une période, avons-nous trouvé une écriture périodique des nombres irrationnels ? Malheureusement, ce n'est pas le cas, en fait il est possible de prouver que l'on peut donner une écriture semblable pour tout nombre irrationnel quadratique, c'est-à-dire tout nombre irrationnel solution d'une équation du second degré à coefficients entiers. Ce qui est le cas de $\sqrt{3}$ qui est solution de l'équation $x^2 - 3 = 0$ et $\phi$ qui est solution de $x^2 - x - 1 = 0$.
+
+\subsection{Nombres irrationnels non quadratiques}
+
+Dans le cas de nombres irrationnels non quadratiques, le développement en fraction continue ne présente malheureusement plus de structure particulière; cependant, les fractions continues ne sont pas inutiles pour la cause et plus particulièrement, les convergents permettent de donner des approximations rationnelles pour ces nombres irrationnels.
+
+Traitons le cas du nombre $\pi$ qui est bien sûr un irrationnel non quadratique\footnote{En fait, le nombre $\pi$ est transcendant, c'est-à-dire qu'il n'est solution d'aucune équation à coefficients entiers; c'est le cas aussi du nombre $e$.}, on trouve facilement que
+\[\pi = [3,7,15,1,292,1,\cdots],\]
+qui ne présente plus aucun caractère périodique. Calculons alors les premiers convergents de cette fraction continue. On trouve que
+\[c_0 = \frac{3}{1},c_1 = \frac{22}{7},c_2 = \frac{333}{106},\cdots.\]
+On remarque ainsi que l'approximation classique du nombre $\pi$ par la fraction $22/7$ n'est pas fortuite. On peut même voir que $333/106<\pi<22/7$, cela reste vrai pour tous les convergents; en fait, le nombre $\pi$ est toujours compris entre deux convergents consécutifs.
+
+A titre d'information, voici le développement en fraction continue du nombre $e$,
+\[e = [2,1,2,1,1,4,\cdots],\]
+et voici les premiers convergents
+\[c_0 = \frac{2}{1},c_1 = \frac{3}{1},c_2 = \frac{8}{3},c_3 = \frac{11}{4},\cdots.\]
+
+\section{Une application: l'équation de Pell}
+
+\subsection{Un peu d'histoire}
+
+Les ancients Grecs ont rencontré l'équation $x^2 - 2y^2 = 1$ dans leurs efforts pour comprendre le nombre $\sqrt{2}$, la diagonale du carré unité, dont ils savaient qu'il était irrationnel. A cette époque, ils avaient trouvé une méthode pour produire des solutions arbitrairement grandes $(x_1,y_1),(x_2,y_2),\cdots$ de cette équation. Ils avaient ainsi à leur disposition des fractions $x_i/y_i$ qui approximaient $\sqrt{2}$. En effet, si $x_i^2 - 2y_i^2 = 1$, alors on a
+\[\frac{x_i^2}{y_i^2} = 2 + \frac{1}{y_i^2}\rightarrow 2\]
+lorsque $y_i\rightarrow\infty$.
+
+Les Grecs ont découvert les solutions $(x_i,y_i)$ parmi les ``nombres transversaux'' $s_i$ et les ``nombres diagonaux'' $d_i$ définis par
+\[s_1 = 2,s_{i+1} = d_i + s_i\]
+et
+\[d_1 = 3,d_{i+1} = d_i + 2s_i.\]
+Ils ont ainsi remarqué que les couples impairs $(d_1,s_1),(d_3,s_3),(d_5,s_5),\cdots$ vérifient l'équation $x^2 - 2y^2 = 1$.
+
+\subsection{L'équation de Pell générale}
+
+Une équation de Pell est une équation de la forme $x^2 - dy^2 = 1$ où $d\in\mathbb{N}$ n'est pas un carré parfait. Nous cherchons ici, tout comme les Grecs ci-dessus, les solutions entières de cette équation. Attirons l'attention sur le fait que si le problème était de trouver les solutions rationnelles de cette équation, cela ne présenterait pas de grosse difficulté, il suffirait de remarquer que
+\[x = \frac{r^2 + d}{r^2 - d}\mbox{ et }y = \frac{2r}{r^2 - d}\]
+constituent des solutions de $x^2 - dy^2 = 1$ pour tout $r\in\mathbb{N}$.
+
+Cependant lorsque les solutions cherchées sont entières, ce problème devient beaucoup plus délicat et les fractions continues deviennent alors très utiles. On peut montrer que
+\[\sqrt{d} = [a_0,\overline{a_1,\cdots,a_{n-1},2a_0}]\]
+avec $n\ge 1$. Dès lors, une solution de l'équation $x^2 - dy^2 = 1$ est donnée par $(p_{n-1},q_{n-1})$ lorsque $n$ est pair et par $(p_{2n-1},q_{2n-1})$ lorsque $n$ est impair.
+
+Donnons l'idée de la preuve de ce fait. Nous allons montrer que, avec les notations habituelles, on a
+\[p_{kn-1}^2 - dq_{kn-1}^2 = (-1)^{kn}\]
+pour $k\ge 1$. En effet, si on pose $r_{kn} = [2a_0,\overline{a_1,\cdots,a_{n-1},2a_0}]$, alors on a
+\[\sqrt{d} = [a_0,a_1,\cdots,a_{kn-1},r_{kn}].\]
+Cependant, on peut voir $\sqrt{d}$ comme étant le $(kn)^\mathrm{e}$ convergent;  dès lors on peut écrire que
+\[\sqrt{d} = \frac{r_{kn}p_{kn-1} + p_{kn-2}}{r_{kn}q_{kn-1} + q_{kn-2}},\]
+or, on constate que $r_{kn} = a_0 + \sqrt{d}$ et ainsi, il vient
+\[\sqrt{d}(a_0q_{kn-1} + q_{kn-2} - p_{kn-1}) = a_0p_{kn-1} + p_{kn-2} - dq_{kn-1}.\]
+Comme $\sqrt{d}$ est irrationnel, on obtient
+\[a_0q_{kn-1} + q_{kn-2} - p_{kn-1} = 0\mbox{ et }a_0p_{kn-1} + p_{kn-2} - dq_{kn-1} = 0,\]
+en multipliant la première égalité par $p_{kn-1}$ et la seconde par $-q_{kn-1}$ et en additionnant, il vient
+\[p_{kn-1}^2 - dq_{kn-1}^2 = -(q_{kn-1}p_{kn-2} - p_{kn-1}q_{kn-2}) = (-1)^{kn}.\]
+Donc si $n$ est pair, alors
+\[p_{n-1}^2 - dq_{n-1}^2 = 1.\]
+Par contre si $n$ est impair, alors le nombre $2n$ est pair et ainsi
+\[p_{2n-1}^2 - dq_{2n-1}^2 = 1,\]
+ce qui suffit.\cqfd
+
+Traitons un exemple. Cherchons des solutions entières de $x^2 - 23y^2 = 1$. On trouve facilement que
+\[\sqrt{23} = [4,\overline{1,3,1,8}],\]
+la période est donc $n = 4$ qui est un nombre pair et ainsi $(p_3,q_3) = (24,5)$ est solution de l'équation de départ.
+
+En fait, une équation de Pell admet une infinité de solutions et on peut générer celles-ci à partir de la solution minimale trouvée avec la méthode ci-dessus. Cela est rendu possible grâce à la règle de composition de Brahmagupta (600 ACN); cette règle affirme que si $(x_1,y_1)$ et $(x_2,y_2)$ sont solutions de l'équation de Pell, alors
+\[(x_3,y_3) = (x_1x_2 + dy_1y_2,x_1y_2 + y_1x_2)\]
+est aussi solution. Une simple vérification permet de s'assurer de ce fait. On peut alors munir l'ensemble des solutions d'une structure de groupe infini avec le neutre $(1,0)$, la loi de composition de Brahmagupta et en prenant l'inverse d'une solution $(x,y)$ comme étant $(x,-y)$. On peut même prouver que ce groupe des solutions est cyclique et que le générateur de ce groupe n'est rien d'autre que la plus petite solution positive; dès lors, toute solution est une puissance (selon la loi de Brahmagupta) de la solution minimale positive et c'est bien sûr cette solution qui nous est donnée par la méthode des fractions continues.
+
+Reprenons alors l'exemple précédent, nous avons trouvé que $(24,5)$ est solution de l'équation $x^2 - 23y^2 = 1$. En composant la solution $(24,5)$ avec elle-même selon Brahmagupta, nous pouvons générer la suite de solutions suivante,
+\[(24,5),(1151, 240),(55224, 11515),(2649601, 552480),\cdots.\]
+
+\subsection{Le ``Bétail du Soleil'' d'Archimède}
+
+Il y a $22$ siècles, Archimède écrivit une lettre à Eratosthène qui proposait un problème concernant du bétail aux étudiants d'Alexandrie\footnote{Ce problème a refait surface en $1773$ lorsque Gotthold Ephraim Lessing publia le texte grec de cet épigramme en $24$ vers traduit d'un manuscrit arabe.}. Voici une traduction de ce problème qui était écrit à l'origine en vers.
+\begin{verse}
+\textit{Si tu es diligent et sage O étranger, calcule la taille du bétail du Soleil. Ce bétail est divisé en quatre troupeaux de différentes couleurs, l'un blanc laiteux, l'autre noir luisant, le troisième brun et le dernier tacheté. Dans chaque troupeau se trouvent des taureaux, puissant en nombre suivant ces proportions: Comprends étranger, que les taureaux blancs étaient égaux à la moitié et au tiers des noirs avec l'entièreté des bruns, alors que les noirs étaient égaux à un quart et un cinquième des tachetés avec, encore une fois, l'entièreté des bruns. Remarque encore que les taureaux restants, les tachetés, étaient égaux à un sixième et un septième des blancs avec tous les bruns. Ceci étaient les proportions des vaches: Les blanches étaient précisément égales à un tiers et un quart du troupeau entier des noirs; alors que les noires étaient égales à un quart et un cinquième des tachetées, quand tous, taureaux inclus, vont pâturer ensemble. Maintenant les tachetées étaient égales en nombre à un cinquième et un sixième du troupeau brun. Finalement les brunes étaient en nombre égales à un sixième et un septième du troupeau blanc.}
+
+\textit{Quand les taureaux blancs mélangent leur nombre avec les noirs, ils tiennent bon, égaux en profondeur et en largeur. A nouveau, quand les taureaux bruns et tachetés sont rassemblés en un troupeau ils se tiennent d'une telle manière que leur nombre, commençant par un, grandit doucement jusqu'à ce qu'il complète une figure triangulaire, aucun taureau d'une autre couleur n'étant présent parmi eux ni aucun d'entre eux ne manquant.}
+\end{verse}
+
+Pour résoudre ce problème, posons $W$, $X$, $Y$ et $Z$ le nombre de taureaux blancs, noirs, bruns et tachetés et $w$, $x$, $y$ et $z$ le nombre de vaches blanches, noires, brunes et tachetées. Ces variables vérifient les équations suivantes.
+\begin{eqnarray*}
+W = (1/2 + 1/3)X + Y &\mbox{ et } &X = (1/4 + 1/5)Z + Y, \\
+Z = (1/6 + 1/7)W + Y &\mbox{ et } &w = (1/3 + 1/4)(X + x), \\
+x = (1/4 + 1/5)(Z + z) &\mbox{ et } &z = (1/5 + 1/6)(Y + y), \\
+y = (1/6 + 1/7)(W + w). & &
+\end{eqnarray*}
+De plus, $W + X$ est un carré parfait et $Y + Z$ est un nombre triangulaire. 
+
+Une solution du système linéaire est donnée très facilement par le logiciel \textsl{Mathematica} et on obtient en posant $z = 3515820v$ avec $v\in\mathbb{N}$ que
+\[W = 10366482v, X = 7460514v, Y = 4149387v, Z = 7358060v,\]
+et
+\[w = 7206360v, x = 4893246v, y = 5439213v, z = 3515820v.\]
+
+Au minimum, Archimède a maintenant $50$ millions de tête de bétail. N'oublions pas qu'en plus le nombre $W + X = 17826996v$ doit être un carré parfait, et puisque
+\[17826996 = 2^2\times 3\times 11\times 29\times 4657v,\]
+cela revient à exiger que $v = 3\times 11\times 29\times 4657s^2 = 4456749s^2$, dès lors on obtient que
+\[W = 46200808287018s^2, X = 33249638308986s^2,\]
+\[Y = 18492776362863s^2, Z = 32793026546940s^2,\]
+et
+\[w = 32116937723640s^2, x = 21807969217254s^2,\]
+\[y = 24241207098537s^2, z = 15669127269180s^2.\]
+Finalement, il reste à imposer que $Y + Z$ soit un nombre triangulaire, c'est-à-dire que
+\[Y + Z = 51285802909803s^2 = \frac{n(n + 1)}{2},\]
+pour un certain $n\in\mathbb{N}$. Si on multiplie cette équation par $8$ et qu'on ajoute $1$, l'équation devient
+\[410286423278424s^2 + 1 = (2n + 1)^2,\]
+si on pose $t = 2n + 1$, nous pouvons conclure que résoudre ce problème revient à trouver une solution de l'équation
+\[t^2 - 410286423278424s^2 = 1,\]
+qui est bien sûr une équation de Pell. Le logiciel \textsl{Mathematica} nous donne la solution pour le nombre total d'individus
+\[W + X + Y + Z + w + x + y + z = 776027140\cdots26719455081800,\]
+où les points de suspension cachent en fait plus de $200000$ chiffres. Le nombre total d'individus est en fait un nombre à $206545$ chiffres, si on écrivait ce nombre en entier, à raison de $80$ caractères par ligne et $72$ lignes par page, il faudrait plus de $35$ pages.
+
+Cela nous donne le sentiment que le problème posé par Archimède n'avait pas été résolu à l'époque, ou alors qui sait ?...
+
+ 
+
+\section{Annexe}
+
+Nous proposons dans cette section les énoncés des résultats utilisés dans cet article sans démonstration, le lecteur intéressé pourra se procurer les preuves de ces résultats classiques sans difficulté, par exemple dans \cite{HarWri} .
+
+\begin{The}{Si $q$ est un nombre rationnel, alors il existe une fraction continue finie $[a_0,a_1,\cdots,a_n]$ telle que
+\[q = [a_0,a_1,\cdots,a_n].\]
+}
+\end{The}
+
+\begin{Lem}{Soit $q = [a_0,a_1,\cdots,a_n]$ une fraction continue finie. Si $c_{2k}$ pour $0\le k\le \lfloor n/2\rfloor$ et $c_{2k+1}$ pour $0\le k\le (n-1)/2\rfloor$  sont les convergents pairs et impairs respectivement, alors
+\begin{enumerate}
+\item
+$c_0<c_2<c_4<\cdots$ et $c_1>c_3>c_5>\cdots$.
+\item
+$c_{2k}<c_{2l+1}$ pour $0\le k\le\lfloor n/2\rfloor$ et $0\le l\le\lfloor (n - 1)/2\rfloor$.
+\item
+$q>c_{2k}$ et $q<c_{2k+1}$ pour $k\ge 0$ et $q = c_{2l}$ avec $n = 2l$ si $n$ est pair et $q = c_{2l+1}$ avec $n = 2l + 1$ si $n$ est impair.
+\end{enumerate}
+}
+\end{Lem}
+
+\begin{Lem}{Si $q = [a_0,a_1,\cdots,a_n]$ est une fraction continue finie, alors on a
+\[\left|q - \frac{p_k}{q_k}\right| \le \frac{1}{q_kq_{k+1}}\]
+pour tout $0\le k< n$.}
+\end{Lem}
+
+\begin{Pro}{Si $(a_m)_{m\in\mathbb{N}}$ est une suite d'entiers tels que $a_m>0$ pour $m>0$, alors la suite $(c_m)_{m\in\mathbb{N}}$ définie par
+\[c_m = \frac{p_m}{q_m} = [a_0,a_1,\cdots,a_m]\]
+est convergente.}
+\end{Pro}
+
+\begin{Pro}{La valeur d'une fraction continue infinie est un nombre irrationnel.}
+\end{Pro}
+
+\begin{The}{Pour tout nombre irrationnel $x$, il existe une fraction continue infinie $[a_0,a_1,\cdots]$ telle que
+\[x = [a_0,a_1,\cdots].\]
+}
+\end{The}
+
+\begin{The}{Si la fraction continue de $\alpha\in\mathbb{R}$ est périodique, alors $\alpha$ est un irrationnel quadratique.}
+\end{The}
+
+\begin{The}[Lagrange]{Si $\alpha\in\mathbb{R}$ est un irrationnel quadratique, alors la fraction continue de $\alpha$ est périodique.}
+\end{The}
+
+\begin{The}{Si $d\in\mathbb{N}$ n'est pas un carré parfait, alors on a
+\[\sqrt{d} = [a_0,\overline{a_1,\cdots,a_{n-1},2a_0}]\]
+pour $n\ge 1$.}
+\end{The}
+
+
+\begin{thebibliography}{4}
+\bibitem{HarWri} Hardy G. H. et Wright E. M., \textit{An Introduction to the Theory of Numbers}, Oxford University Press, 1979.
+\bibitem{Knuth} Knuth D. E., \textit{The Art of Computer Programming Vol. 2 Seminumerical Algorithms}, Addison-Wesley, 1998.
+\bibitem{Still1} Stillwell J., \textit{Elements of Number Theory}, Springer-Verlag, 2003.
+\bibitem{Still2} Stillwell J., \textit{Mathematics and its History}, Springer-Verlag, 2001.
+\end{thebibliography}
+
+
+\end{document}

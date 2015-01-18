@@ -1,0 +1,363 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage{pierre}
+%\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{Lb_Fr_2}
+
+\title{\textbf{Fractions Continues}}
+\author{\textsl{Pierre Paquay}}
+
+\begin{document}
+
+\maketitle
+
+\section{Définitions et propriétés fondamentales}
+
+\begin{Def}{\rm Soient $n\ge 0$ et $a_0,a_1,\cdots,a_n\in\mathbb{Z}$ tels que $a_i>0$ pour $0< i\le n$. On appelle \textit{fraction continue finie} toute expression de la forme
+\[a_0 + \frac{1}{\displaystyle a_1 + \frac{1}{\displaystyle a_1 + \frac{1}{\displaystyle a_2 + \cdots + \frac{1}{\displaystyle a_n}}}}.\]
+}
+\end{Def}
+
+On écrit encore cette expression sous la forme plus compacte $[a_0,a_1,\cdots,a_n]$. On appelle les entiers $a_i$ les \textit{quotients partiels} de la fraction continue et on appelle les nombres $c_k = [a_o,a_1,\cdots, a_k]$ avec $0\le k\le n$ les \textit{convergents} de la fraction continue.
+
+Deux fractions continues sont évidemment égales si leur quotients partiels sont égaux, mais deux fractions continues différentes n'évaluent pas nécessairement deux nombres différents.
+
+
+\begin{Pro}\label{conv}{Si on définit les entiers $p_0,p_1,\cdots,p_n$ et $q_0,q_1,\cdots,q_n$ par
+\[p_k = \left\{
+\begin{array}{ll}
+a_0 &\textrm{si }k = 0\\
+a_0a_1 + 1 &\textrm{si }k = 1
+\\ a_kp_{k-1} + p_{k-2} &\textrm{si }2\le k\le n
+\end{array}
+\right.\]
+et
+\[q_k = \left\{
+\begin{array}{ll}
+1 &\textrm{si }k = 0\\
+a_1 &\textrm{si }k = 1
+\\ a_kq_{k-1} + q_{k-2} &\textrm{si }2\le k\le n
+\end{array}
+\right.,\]
+alors on a
+\[c_k = \frac{p_k}{q_k}\]
+pour $0\le k\le n$.}
+\end{Pro}
+
+\begin{Preuve}{Procédons par récurrence. Si $k = 0$, alors $p_0/q_0 = a_0 = c_0$ et si $k = 1$, alors $p_1/q_1 = a_0 + 1/a_2 = c_1$.
+
+Supposons maintenant le résultat vrai pour $k$ et montrons qu'il reste valide pour $k + 1$. Il vient
+\begin{eqnarray*}
+[a_0,a_1,\cdots,a_k,a_{k+1}] &= &\Bigl[a_0,a_1,\cdots,a_k + \frac{1}{a_{k+1}}\Bigr] \\
+& = &\frac{\Bigl(a_k + \frac{1}{a_{k+1}}\Bigr)p_{k-1} + p_{k-2}}{\Bigl(a_k + \frac{1}{a_{k+1}}\Bigr)q_{k-1} + q_{k-2}} \\
+&= &\frac{a_{k+1}(a_kp_{k-1} + p_{k-2}) + p_{k-1}}{a_{k+1}(a_kq_{k-1} + q_{k-2}) + q_{k-1}} \\
+&= &\frac{a_{k+1}p_k + p_{k-1}}{a_{k+1}q_k + q_{k-1}},
+\end{eqnarray*}
+ce qui suffit.\cqfd}
+\end{Preuve}
+
+\begin{Rmq}{\rm On peut facilement se rendre compte que cette proposition reste vraie même si les $a_i$ ne sont pas entiers. Cette remarque reste valable pour la proposition suivante.}
+\end{Rmq}
+
+\begin{Pro}\label{formula}{Les entiers $p_k$ et $q_k$ définis comme dans la proposition~\ref{conv} vérifient
+\[p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}\]
+et
+\[p_kq_{k+2} - q_kp_{k+2} = (-1)^{k+1}a_{k+2}\]
+pour $0\le k\le n$.}
+\end{Pro}
+
+\begin{Preuve}{Procédons ici aussi par récurrence. Si $k = 0$, alors
+\[p_0q_1 - q_0p_1 = -1.\]
+
+Supposons maintenant ce résultat vrai pour $k$ et montrons qu'il reste valide pour $k+1$. On a
+\begin{eqnarray*}
+p_{k+1}q_{k+2} - q_{k+1}p_{k+2} &= &p_{k+1}(a_{k+2}q_{k+1} + q_k) - q_{k+1}(a_{k+2}p_{k+1} + p_k) \\
+&= &-(p_kq_{k+1} - q_kp_{k+1}) \\
+&= &(-1)^{k+2},
+\end{eqnarray*}
+ce qui prouve la première partie de l'énoncé.
+
+La seconde partie se montre simplement en considérant ce qui suit,
+\begin{eqnarray*}
+p_kq_{k+2} - q_kp_{k+2} &= &p_k(a_{k+2}q_{k+1} + q_k) - q_k(a_{k+2}p_{k+1} + p_k) \\
+&= &a_{k+2}(p_kq_{k+1} - p_{k+1}q_k) \\
+&= &(-1)^{k+1}a_{k+2}.
+\end{eqnarray*}
+La proposition est ainsi démontrée.\cqfd}
+\end{Preuve}
+
+\begin{Cor}{Tout convergent $c_k = p_k/q_k$ est rationnel et tel que $\pgcd(p_k,q_k) = 1$.}
+\end{Cor}
+
+\begin{Preuve}{La première partie est triviale. Pour la seconde, il suffit de remarquer que si $d$ divise $p_k$ et $q_k$, alors $d$ divise aussi $p_kq_{k+1} - q_kp_{k+1} = (-1)^{k+1}$, ce qui revient à exiger que $d = 1$.\cqfd}
+\end{Preuve}
+
+\begin{Cor}{Les entiers $q_k$ définis comme dans la proposition~\ref{conv} sont tous positifs et forment une suite croissante. De plus, on a $q_k\ge k$ pour $0\le k\le n$.}
+\end{Cor}
+
+\begin{Preuve}{Procédons par récurrence. On a évidemment $q_0 = 1>0$ et $q_1 = a_1\ge 1>0$.
+
+Supposons le résultat vrai pour $k$ et montrons qu'il reste vrai pour $k+1$. On voit que
+\[q_{k+1} = a_{k+1}q_k + q_{k-1}\ge q_k > 0.\]
+
+Pour la seconde partie de l'énoncé, nous procédons encore par récurrence. Ainsi, on constate que $q_0 = 1\ge 0$, $q_1 = a_1\ge 1$ et $q_2 = a_1a_2 + 1\ge 2$. Si maintenant, nous supposons la propriété vraie pour tout $l\le k$, examinons ce qui se passe pour $k+1$. On a que
+\begin{eqnarray*}
+q_{k+1} &= &a_{k+1}q_k + q_{k-1} \\
+&\ge &k + (k - 1) = 2k - 1 \\
+&\ge &k + 1
+\end{eqnarray*}
+lorsque $k\ge 2$, ce qui est le cas.\cqfd}
+\end{Preuve}
+
+\begin{The}{Si $q\in\mathbb{Q}$, alors il existe une fraction continue finie $[a_0,a_1,\cdots,a_n]$ telle que
+\[q = [a_0,a_1,\cdots,a_n].\]
+}
+\end{The}
+
+\begin{Preuve}{Posons $q = s/t$ avec $s,t\in\mathbb{Z}$ et $t\ne 0$. Appliquons l'algorithme d'Euclide au couple $(s,t)$, il vient successivement
+\begin{eqnarray*}
+s &= &\Bigl\lfloor\frac{s}{t}\Bigr\rfloor t + r_0\textrm{ avec }0\le r_0 < t \\
+t &= &\Bigl\lfloor\frac{t}{r_0}\Bigr\rfloor r_0 + r_1\textrm{ avec }0\le r_1 < r_0 \\
+r_0 &= &\Bigl\lfloor\frac{r_0}{r_1}\Bigr\rfloor r_1 + r_2\textrm{ avec }0\le r_2 < r_1 \\
+ &\vdots & \\
+r_{n-3} &= &\Bigl\lfloor\frac{r_{n-3}}{r_{n-2}}\Bigr\rfloor r_{n-2} + r_{n-1}\textrm{ avec }0\le r_{n-1} < r_{n-2} \\
+r_{n-2} &= &\Bigl\lfloor\frac{r_{n-2}}{r_{n-1}}\Bigr\rfloor r_{n-1}.
+\end{eqnarray*}
+
+Etant donné que chaque $r_i$ est différent de $0$, on peut écrire les égalités ci-dessus sous la forme suivante
+\begin{eqnarray*}
+\frac{s}{t} &= &\Bigl\lfloor\frac{s}{t}\Bigr\rfloor + \frac{r_0}{t} \\
+\frac{t}{r_0} &= &\Bigl\lfloor\frac{t}{r_0}\Bigr\rfloor + \frac{r_1}{r_0} \\
+\frac{r_0}{r_1} &= &\Bigl\lfloor\frac{r_0}{r_1}\Bigr\rfloor + \frac{r_2}{r_1} \\
+ &\vdots & \\
+\frac{r_{n-3}}{r_{n-2}} &= &\Bigl\lfloor\frac{r_{n-3}}{r_{n-2}}\Bigr\rfloor + \frac{r_{n-1}}{r_{n-2}} \\
+\frac{r_{n-2}}{r_{n-1}} &= &\Bigl\lfloor\frac{r_{n-2}}{r_{n-1}}\Bigr\rfloor.
+\end{eqnarray*}
+En remplaçant chaque fraction trouvée par l'expression suivante, on obtient finalement
+\begin{eqnarray*}
+\frac{s}{t} &= &\Bigl\lfloor\frac{s}{t}\Bigr\rfloor + \frac{1}{\displaystyle\frac{t}{r_0}} \\
+&= &\Bigl\lfloor\frac{s}{t}\Bigr\rfloor + \frac{1}{\displaystyle \Bigl\lfloor\frac{t}{r_0}\Bigr\rfloor + \frac{1}{\displaystyle\frac{r_0}{r_1}}} \\
+&= &\cdots \\
+&= &[a_0,a_1,\cdots,a_n]
+\end{eqnarray*}
+où on a posé $a_0 = \lfloor s/t\rfloor$, $a_1 = \lfloor t/r_0\rfloor$ et $a_i = \lfloor r_{i-2}/r_{i-1}\rfloor$ pour $i = 2,\cdots,n$. Il est clair que cette expression est bien une fraction continue au sens où nous l'avons définie puisque chaque $a_i\in\mathbb{Z}$ et $a_i>0$ pour $0<i\le n$.\cqfd}
+\end{Preuve}
+
+\begin{Alg}[Fractions continues]{\label{AlgFC}}{Soit $q\in\mathbb{Q}$, les quotients partiels de la fraction continue finie
+\[q = [a_0,a_1,\cdots,a_n]\]
+peuvent être trouvés grâce aux formules de récurrence suivantes
+\[\theta_k = \left\{
+\begin{array}{ll}
+q &\textrm{si }k = 0 \\
+\frac{1}{\theta_{k-1} - a_{k-1}} &\textrm{si }0<k\le n
+\end{array}
+\right.\]
+et
+\[a_k = \lfloor\theta_k\rfloor\]
+avec $0\le k\le n$ et $n$ le plus petit naturel tel que $\theta_n = a_n$.}
+\end{Alg}
+
+\begin{Preuve}{Cela résulte directement du théorème précédent.\cqfd}
+\end{Preuve}
+
+\begin{Pro}{\label{ConvProp}}{Soit $q = [a_0,a_1,\cdots,a_n]$ une fraction continue finie. Si $c_{2k}$ pour $0\le k\le \lfloor n/2\rfloor$ et $c_{2k+1}$ pour $0\le k\le (n-1)/2\rfloor$  sont les convergents pairs et impairs respectivement, alors
+\begin{enumerate}
+\item
+$c_0<c_2<c_4<\cdots$ et $c_1>c_3>c_5>\cdots$.
+\item
+$c_{2k}<c_{2l+1}$ pour $0\le k\le\lfloor n/2\rfloor$ et $0\le l\le\lfloor (n - 1)/2\rfloor$.
+\item
+$q>c_{2k}$ et $q<c_{2k+1}$ pour $k\ge 0$ et $q = c_{2l}$ avec $n = 2l$ si $n$ est pair et $q = c_{2l+1}$ avec $n = 2l + 1$ si $n$ est impair.
+\end{enumerate}
+}
+\end{Pro}
+
+\begin{Preuve}{On a, grâce à la proposition~\ref{formula}, que
+\begin{eqnarray*}
+c_l - c_{l+2} &= &\frac{p_l}{q_l} - \frac{p_{l+2}}{q_{l+2}} \\
+&= &\frac{p_lq_{l+2} - q_lp_{l+2}}{q_lq_{l+2}} \\
+&= &\frac{(-1)^{l+1}a_{l+2}}{q_lq_{l+2}} 
+\end{eqnarray*}
+pour $0\le l\le n$ et puisque $a_{l+1}/(q_lq_{l+2})>0$, le signe de $c_l - c_{l+2}$ est le signe de $(-1)^{l+1}$. Donc, si $l = 2k$, il vient que
+\[c_{2k} - c_{2k + 2} < 0,\]
+ce qui montre bien que la suite des $c_{2k}$ est croissante; et si $l = 2k + 1$, il vient que
+\[c_{2k + 1} - c_{2k + 3} > 0,\]
+ce qui montre que la suite des $c_{2k+1}$ est décroissante et ceci prouve le point $(i)$.
+
+On a encore, toujours grâce à la proposition~\ref{formula}, que
+\begin{eqnarray*}
+c_l - c_{l+1} &= &\frac{p_l}{q_l} - \frac{p_{l+1}}{q_{l+1}} \\
+&= &\frac{p_lq_{l+1} - q_lp_{l+1}}{q_lq_{l+1}} \\
+&= &\frac{(-1)^{l+1}}{q_lq_{l+1}} 
+\end{eqnarray*}
+pour $0\le l< n$ et puisque $1/(q_lq_{l+1})>0$, le signe de $c_l - c_{l+1}$ est le signe de $(-1)^{l+1}$. Ainsi, si $l$ est pair, il vient que
+\[c_l - c_{l + 1} < 0,\]
+et si $l$ est impair, il vient alors que
+\[c_l - c_{l+1} > 0.\]
+Supposons alors qu'il existe $0\le r\le\lfloor n/2\rfloor$ et $0\le s\le\lfloor (n - 1)/2\rfloor$ tels que $c_{2r}\ge c_{2s+1}$. Si $r>s$, bien sûr $r - 1\ge s$, alors
+\[c_{2r}\ge c_{2s+1}\ge c_{2r-1},\]
+ce qui est absurde si on pose $2r = l + 1$. De même, si $r\le s$, alors
+\[c_{2s+1}\le c_{2r}\le c_{2s},\]
+ce qui est absurde si on pose $2s + 1= l + 1$ et ceci prouve le point $(ii)$.
+
+Pour terminer, si $n = 2l$, alors $q = c_n = c_{2l} > c_{2k}$ pour tout $0\le k<\lfloor n/2\rfloor$ et $q = c_{2l} < c_{2k+1}$ pour tout $0\le k\le\lfloor (n - 1)/2\rfloor$. Si maintenant $n = 2l + 1$, alors $q = c_{2l+1} < c_{2k+1}$ pour tout $0\le k<\lfloor (n - 1)/2\rfloor$ et $q = c_{2l+1} > c_{2k}$ pour tout $0\le k\le\lfloor n/2\rfloor$. Ceci termine la preuve.\cqfd}
+\end{Preuve}
+
+\begin{Cor}{Si $q = [a_0,a_1,\cdots,a_n]$ est une fraction continue finie, alors on a
+\[\Bigl|q - \frac{p_k}{q_k}\Bigr| \le \frac{1}{q_kq_{k+1}}\]
+pour tout $0\le k< n$.}
+\end{Cor}
+
+\begin{Preuve}{Nous savons, par la proposition précédente que $q$ est compris entre $p_k/q_k$ et $p_{k+1}/q_{k+1}$, dès lors il vient
+\[\Bigl|q - \frac{p_k}{q_k}\Bigr|\le\Bigl|\frac{p_k}{q_k} - \frac{p_{k+1}}{q_{k+1}}\Bigr| = \Bigl|\frac{p_kq_{k+1} - p_{k+1}q_k}{q_kq_{k+1}}\Bigr| = \frac{1}{q_kq_{k+1}},\]
+ce qui suffit.\cqfd}
+\end{Preuve}
+
+\begin{Lem}{Si $(a_m)_{m\in\mathbb{N}}$ est une suite d'entiers tels que $a_m>0$ pour $m>0$, alors la suite $(c_m)_{m\in\mathbb{N}}$ définie par
+\[c_m = \frac{p_m}{q_m} = [a_0,a_1,\cdots,a_m]\]
+est convergente.}
+\end{Lem}
+
+\begin{Preuve}{Il est clair par la proposition~\ref{ConvProp} que $c_{2m}<c_1$ pour tout $m\ge 0$, de plus la suite $c_{2m}$ est croissante; dès lors cette suite converge vers la borne supérieure de l'ensemble de ses éléments, soit $x_u$ cette limite. De même, on peut voir que $c_{2m+1}>x_0$ pour tout $m\ge 0$ et de plus la suite $c_{2m+1}$ est décroissante; dès lors cette suite converge vers la borne inférieure de l'ensemble de ses éléments, soit $x_d$ cette limite. Pour se rendre compte que $x_u = x_d$, il suffit de considérer le développement suivant,
+\[|c_{2m} - c_{2m+1}| = \Bigl|\frac{p_{2m}}{q_{2m}} - \frac{p_{2m+1}}{q_{2m+1}}\Bigr| = \frac{1}{|q_{2m}q_{2m+1}|}\le\frac{1}{2m(2m+1)}\]
+qui converge vers $0$ lorsque $m\rightarrow\infty$. Dés lors, on a bien $x_u = x_d$, ce qui suffit.\cqfd}
+\end{Preuve}
+
+\begin{Def}{\rm Soit $(a_m)_{m\in\mathbb{N}}$ une suite d'entiers tels que $a_m>0$ pour $m>0$, on appelle \textit{fraction continue infinie} toute expression de la forme
+\[\lim_{m\rightarrow\infty}[a_0,a_1,\cdots,a_m].\]
+}
+\end{Def}
+
+On écrit encore cette expression sous la forme $[a_0,a_1,a_2,\cdots]$. Comme dans le cas fini, les nombres $a_m$ sont appelés les \textit{quotients partiels} et les nombres $c_m = [a_0,a_1,\cdots,a_m]$ sont appelés les \textit{convergents} de la fraction continue.
+
+\begin{Pro}{La valeur d'une fraction continue infinie est un nombre irrationnel.}
+\end{Pro}
+
+\begin{Preuve}{Soit $x = [a_0,a_1,\cdots]\in\mathbb{R}$. Procédons par l'absurde, supposons que $x\in\mathbb{Q}$, dans ce cas nous pouvons écrire, grâce à l'algorithme~\ref{AlgFC} le nombre $x\in\mathbb{Q}$ sous la forme d'une fraction continue finie $[b_0,b_1,\cdots,b_n]$. Dès lors, il vient que $x = \theta_0$ et comme $0<[a_0,a_1,\cdots] - a_0<1$, il vient que $b_0 = \lfloor x\rfloor = a_0$; de même, si on prend $\theta_1 = 1/(x - a_0)$, alors il vient $0<\theta_1 - a_1<1$ et ainsi $b_1 = \lfloor \theta_1\rfloor = a_1$. On procède de proche en proche jusqu'à ce que $b_{n-1} = a_{n-1}$, ainsi il vient que $b_n = a_n + 1/\cdots$; or, $a_n$ et $b_n$ sont entiers, ce qui est absurde et donc $x\notin\mathbb{Q}$.\cqfd}
+\end{Preuve}
+
+\begin{The}{Pour tout nombre irrationnel $x$, il existe une fraction continue infinie $[a_0,a_1,\cdots]$ telle que
+\[x = [a_0,a_1,\cdots].\]
+}
+\end{The}
+
+\begin{Preuve}{Appliquons la procédure de l'algorithme~\ref{AlgFC} au nombre $x$. Si nous trouvons un $n\in\mathbb{N}$ tel que l'algorithme s'arrête après avoir évalué $a_n$, alors on a $\theta_n = a_n$ et $x = [a_0,a_1,\cdots,a_n]\in\mathbb{Q}$ ce qui est impossible. Dès lors, l'algorithme ne peut pas s'arrêter et la fraction continue est infinie.\cqfd}
+\end{Preuve}
+
+\begin{Def}{\rm Une fraction continue infinie $[a_0,a_1,a_2,\cdots]$ est dite \textit{périodique} s'il existe des entiers $n\ge 0$ et $k\ge 1$ tels que pour tout $l\ge n$, on a $a_{l+k} = a_l$. Dans ce cas, on écrit la fraction continue par
+\[[a_0,a_1,\cdots,\overline{a_n,a_{n+1},\cdots,a_{n+k-1}}].\]
+}
+\end{Def}
+
+\begin{Def}{\rm Un nombre $x\in\mathbb{R}$ est dit \textit{quadratique irrationnel} s'il existe $a,b,c\in\mathbb{Z}$ tels que $ax^2 + bx +c = 0$ et $d = b^2 - 4ac>0$ et $d$ n'est pas un carré parfait.}
+\end{Def}
+
+\begin{The}{Si la fraction continue de $\alpha\in\mathbb{R}$ est périodique, alors $\alpha$ est un irrationnel quadratique.}
+\end{The}
+
+\begin{Preuve}{Il existe des entiers  $n\ge 0$ et $k\ge 1$ tels que pour tout $l\ge n$, on a
+\[\alpha = [a_0,a_1,\cdots,a_{n-1},\overline{a_n,a_{n+1},\cdots,a_{n+k-1}}].\]
+Posons $x = [\overline{a_n,a_{n+1},\cdots,a_{n+k-1}}]$, on peut alors écrire $\alpha$ et $x$ par
+\[\alpha = [a_0,a_1,\cdots,a_{n-1},x]\]
+et
+\[x = [a_n,a_{n+1},\cdots,a_{n+k-1},x]\]
+qui ont la forme de deux fractions continues finies, mais dont les quotients partiels ne sont pas tous entiers.
+Il vient alors
+\[\alpha = \frac{xp_{n-1} + p_{n-2}}{xq_{n-1} + q_{n-2}}\]
+et
+\[x = \frac{xp_{n+k-1} + p_{n+k-2}}{xq_{n+k-1} + q_{n+k-2}},\]
+pour $n\ge 2$ et $k\ge 2$. On obtient alors facilement\footnote{On a $p_{n-1} - \alpha q_{n-1}\ne 0$ car sinon $\alpha = p_{n-1}/q_{n-1} = [a_0,\cdots,a_{n-1}]\in\mathbb{Q}$ ce qui est absurde.}
+\[x = \frac{\alpha q_{n-2} - p_{n-2}}{p_{n-1} - \alpha q_{n-1}}\]
+et
+\[q_{n+k-1}x^2 + (q_{n+k-2} - p_{n+k-2})x - p_{n+k-2} = 0;\eqno{(*)}\]
+et si on substitue l'expression de $x$ dans $(*)$, on obtient une équation du type $a\alpha^2 + b\alpha + c = 0$ avec $a,b,c\in\mathbb{Z}$. Puisque la fraction continue pour $\alpha$ est infinie, le nombre $\alpha$ est irrationnel et ainsi $d = b^2 - 4ac$ n'est pas un carré parfait et $d>0$.
+
+Dans le cas où $k = 1$, on a $a_n = a_{n+l}$ pour tout $l\in\mathbb{N}$, ainsi il vient
+\[x = a_n + \frac{1}{x}\]
+et donc
+\[x^2 - a_nx - 1 = 0;\eqno{(**)}\]
+si on remplace dans cette expression la valeur de $x$ ci-dessus, on obtient encore que $\alpha$ est un irrationnel quadratique.
+
+Si $n = 0$, alors $\alpha = x$ et le théorème est prouvé en remplaçant $x$ par $\alpha$ dans $(*)$ ou $(**)$ selon que $k = 1$ ou $k\ge 2$.
+
+Si $n = 1$, alors $\alpha = (a_0x + 1)/x$ et donc $x = 1/(\alpha - a_0)$ et le théorème est prouvé en remplaçant $x$ dans $(*)$ ou $(**)$ selon que $k = 1$ ou $k\ge 2$.\cqfd}
+\end{Preuve}
+
+\begin{The}[Lagrange]{Si $\alpha\in\mathbb{R}$ est un irrationnel quadratique, alors la fraction continue de $\alpha$ est périodique.}
+\end{The}
+
+\begin{Preuve}{Il existe des nombres $a,b,c\in\mathbb{Z}$ tels que $a\alpha^2 + b\alpha + c = 0$ et considérons la fraction continue de $\alpha$, on a
+\[\alpha = [a_0,a_1,a_2,\cdots].\]
+Posons $x_n = [a_n,a_{n+1},\cdots]$, ainsi il vient
+\[\alpha = [a_0,a_1,\cdots,a_n,x_{n+1}]\]
+pour tout $n\in\mathbb{N}$ qui a la forme d'une fraction continue dont les quotients partiels ne sont pas tous entiers. Nous pouvons alors écrire que
+\[\alpha = \frac{x_{n+1}p_n + p_{n-1}}{x_{n+1}q_n + q_{n-1}}\]
+pour $n\ge 1$.
+
+Considérons alors la forme quadratique suivante
+\[f(u,v) = au^2 + buv + cv^2,\]
+on remarque que $f(\alpha,1) = 0$. Si on opère la substitution suivante,
+\[u = p_nu' + p_{n-1}v'\textrm{ et }v = q_nu' + q_{n-1}v',\]
+alors pour tout $n\ge 1$, on obtient une nouvelle forme quadratique $f_n(u',v')$ définie par
+\[f_n(u',v') = a'_nu'^2 + b'_nu'v' + c'_nv'^2\]
+avec
+\[a'_n = f(p_n,q_n)\textrm{ et }c'_n = a'_{n-1}\textrm{ et }(b'_n)^2 = b^2 - 4ac + 4a'_nc'_n.\]
+Remarquons alors que
+\begin{eqnarray*}
+\frac{f_n(x_{n+1},1)}{(x_{n+1}q_n + q_{n-1})^2} &= &\frac{f(x_{n+1}p_n + p_{n-1},x_{n+1}q_n + q_{n-1})}{(x_{n+1}q_n + q_{n-1})^2} \\
+&= &a\frac{(x_{n+1}p_n + p_{n-1})^2}{(x_{n+1}q_n + q_{n-1})^2} + b\frac{x_{n+1}p_n + p_{n-1}}{x_{n+1}q_n + q_{n-1}} + c \\
+&= &f(\alpha,1) = 0,
+\end{eqnarray*}
+ainsi $f_n(x_{n+1},1) = 0$. Dès lors, pour tout $n\ge 1$, nous savons que $x_{n+1}$ est une racine de $f_n(z,1)$ qui est un polynôme quadratique.
+
+Puisque nous savons que
+\[\Bigl|\alpha - \frac{p_n}{q_n}\Bigr|<\frac{1}{q_nq_{n+1}},\]
+il vient
+\[|\alpha q_n - p_n|<\frac{1}{q_{n+1}}<\frac{1}{q_n}\]
+et donc
+\[p_n = \alpha q_n + \frac{\delta}{q_n}\]
+avec $|\delta|<1$. Si on remplace cette valeur de $p_n$ dans l'expression de $a'_n$, on obtient
+\begin{eqnarray*}
+a'_n &= &a\Bigl(\alpha q_n + \frac{\delta}{q_n}\Bigr)^2 + b\Bigl(\alpha q_n + \frac{\delta}{q_n}\Bigr)q_n + cq_n^2 \\
+&= &(a\alpha^2 + b\alpha + c)q_n^2 + 2a\alpha\delta + a\frac{\delta^2}{q_n^2} + b\delta \\
+&= &2a\alpha\delta + a\frac{\delta^2}{q_n^2} + b\delta,
+\end{eqnarray*}
+Ainsi, il vient
+\[|a'_n| = \Bigl|2a\alpha\delta + a\frac{\delta^2}{q_n^2} + b\delta\Bigr|< 2|a\alpha| + |a| + |b|.\]
+Ce qui signifie qu'il y a seulement un nombre fini de valeurs différentes pour $a'_n$, il en est de même pour $b'_n$ et $c'_n$ pour $n\ge 1$; il y a donc seulement un nombre fini de formes quadratiques $f_n(u',v')$ et donc un nombre fini de polynômes quadratiques $f_n(z,1)$ qui n'ont au maximum que deux racines, on a donc un nombre fini de $x_{n+1}$ pour $n\ge 1$. Dès lors, puisque l'ensemble $\{x_n : n\in\mathbb{N}\}$ est fini, il existe $i<j$ tels que $x_i = x_j$; si on pose $k = \min_j\{j\in\mathbb{N} : x_i = x_j , i<j\}$, alors
+\[x_i = [a_i,a_{i+1},\cdots,a_{k-1},x_i] = [\overline{a_i,a_{i+1},\cdots,a_{k-1}}],\]
+et donc au final
+\[\alpha = [a_0,a_1,\cdots,a_{i-1},\overline{a_i,a_{i+1},\cdots,a_{k-1}}],\]
+ce qui démontre le théorème.\cqfd}
+\end{Preuve}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

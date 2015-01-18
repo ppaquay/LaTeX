@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{\textbf{Paradoxes probabilistes}}
+\author{\textbf{P. Paquay, \textsl{H.E.L. - Catégorie pédagogique}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Blablabla...
+
+\section{Paradoxes}
+
+\subsection{Problème de Monty Hall}
+
+\subsubsection{Énoncé}
+
+\textit{``Dans un jeu télévisé, il y a trois portes fermées et numérotées $A$, $B$ et $C$. Derrière l'une d'entre-elles se trouve une voiture de sport et derrière les deux autres se trouve une chèvre. Un joueur choisit alors une des trois portes $A$, $B$ ou $C$ et le présentateur, qui connaît la porte cachant la voiture, ouvre une autre porte derrière laquelle se trouve donc une chèvre. Le présentateur donne alors le choix au joueur de garder son choix de porte initial ou de changer et de prendre l'autre porte. Quelle est la meilleure option ?''}
+
+Précisons que le joueur choisit initialement la porte au hasard (et est plus intéressé par la voiture que par la chèvre) et que le présentateur agit de la manière suivante.
+\begin{itemize}
+\item[$\bullet$]
+Il ouvre toujours une porte qui n'a pas été choisie par le joueur.
+\item[$\bullet$]
+Il ouvre toujours une porte derrière laquelle se trouve une chèvre.
+\end{itemize}
+
+\subsubsection{Contexte}
+
+Le problème de Monty Hall est basé sur un jeu télévisé américain célèbre appelé ``Let's Make a Deal'' (dont le présentateur était un certain Monty Hall). Ce problème dans sa forme actuelle fut posé à l'origine par Steve Selvin en 1975 dans le journal \textsl{American Statistician}. Il ne devint connu du grand public que lorsque 25 ans plus tard, Craig Whitaker un lecteur de \textsl{Parade Magazine} posa le même problème à la rédactrice Marilyn vos Savant pour sa rubrique ``Ask Marilyn''.
+
+Une réponse commune et naïve à ce problème est que le fait de changer son choix initial est sans importance puisque chacune des deux portes fermées restantes cachent la voiture avec la même probabilité ($1/2$). Cet argument est bien sûr basé sur le principe d'indifférence; le célèbre et prolifique mathématicien Paul Erd\H{o}s (1913-1996) fut d'ailleurs convaincu par ce raisonnement qui, nous allons le voir ci-dessous, était tout à fait erroné.
+
+\subsubsection{Solution}
+
+La clé pour résoudre ce problème est d'exprimer correctement l'ensemble des résultats possibles de ce problème. Supposons pour fixer les idées que la voiture soit derrière la porte $A$.
+
+Soit alors $\Omega_{NC}$ l'ensemble des résultats si le joueur décide de ne pas changer son choix de porte initial, on va alors écrire
+\[\Omega_{NC} = \{(A, B, A), (A, C, A), (B, C, B), (C, B, C)\}\]
+où le premier élément du triplet est le choix initial du joueur, le deuxième élément la porte ouverte par le présentateur et le troisième élément le choix final du joueur. On remarque que le joueur ne gagne la voiture que lorsqu'il choisit initialement la porte $A$, dans ce cas, la probabilité de gagner la voiture est
+\[\mathbf{P}(\mbox{Voiture}) = \mathbf{P}(\mbox{Choisir la porte }A) = \frac{1}{3}.\]
+
+Soit maintenant $\Omega_C$ l'ensemble des résultats si le joueur décide de changer son choix de porte initial, on a alors
+\[\Omega_C = \{(A, B, C), (A, C, B), (B, C, A), (C, B, A)\}\]
+avec les mêmes notations que précédemment. On remarque ici que le joueur gagne la voiture lorsqu'il choisit initialement la porte $B$ ou la porte $C$, ainsi la probabilité de gagner la voiture est alors
+\[\mathbf{P}(\mbox{Voiture}) = \mathbf{P}(\mbox{Choisir la porte }B) + \mathbf{P}(\mbox{Choisir la porte }C) = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}.\]
+
+On peut donc conclure que le joueur a deux fois plus de chances de gagner la voiture s'il change son choix initial que s'il le conserve. Ce qui est contraire à l'intuition naïve qui tend à nous convaincre que ce changement initial est sans importance. D'ailleurs, lorsque Marilyn vos Savant\footnote{En 1985 Marilyn vos Savant détenait le record du monde du plus haut Q.I. avec un score de $228$.} publia la solution à ce problème dans \textsl{Parade Magazine}, de nombreux mathématiciens (dont un bon nombre détenaient un doctorat) n'étaient absolument pas convaincus par la solution proposée et maintenaient que la probabilité de gagner la voiture était de $1/2$ indépendamment du fait de changer son choix initial ou non. En particulier, Paul Erd\H{o}s ne fut convaincu de la justesse de ce raisonnement que lorsqu'il vit une simulation informatique de ce problème confirmant le résultat.
+
+
+\subsection{Problème des anniversaires}
+
+\subsubsection{Énoncé}
+
+\textit{``Quel est le nombre minimum de personnes devant être présents dans une même pièce pour que la probabilité que deux d'entre-eux partagent la même date d'anniversaire soit supérieure à $1/2$.''}
+
+Nous supposerons ici qu'il y a $365$ jours dans une année et que chaque date d'anniversaire est également probable.
+
+\subsubsection{Contexte}
+
+Le problème des anniversaires fut d'abord posé par le statisticien von Mises en 1939.
+
+Tout d'abord il est clair par le principe des tiroirs\footnote{Si $n$ objets sont placés dans $m$ tiroirs avec $n > m$, alors au moins un des tiroirs doit contenir plus d'un objet.}, si nous avons $366$ personnes dans la même pièce, la probabilité que deux d'entre-elles aient la même date d'anniversaire sera de $1$. Ainsi, une solution naïve à ce problème consiste très souvent à proposer un nombre de $183$ personnes pour que la probabilité qu'il y ait au moins une date d'anniversaire commune soit supérieure à $1/2$; cependant comme nous allons le voir, le nombre requis est beaucoup plus modeste.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

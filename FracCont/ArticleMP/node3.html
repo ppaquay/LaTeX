@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Définitions et propriétés fondamentales</TITLE>
+<META NAME="description" CONTENT="Définitions et propriétés fondamentales">
+<META NAME="keywords" CONTENT="ArticleMP">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ArticleMP.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="ArticleMP.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html51"
+  HREF="ArticleMP.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html45"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html54"
+  HREF="node4.html">Approximation des nombres rationnels</A>
+<B> monter:</B> <A NAME="tex2html52"
+  HREF="ArticleMP.html">Petite étude des fractions</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html46"
+  HREF="node2.html">Un petit problème de</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000">
+Définitions et propriétés fondamentales</A>
+</H1>
+
+<P>
+Pour fixer les idées, il est indispensable de donner une définition précise d'une fraction continue.
+
+<P>
+<BR>
+<IMG
+ WIDTH="556" HEIGHT="212" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="\begin{Def}{\rm Une \textit{fraction continue finie} est une expression de la fo...
+...pour $0&lt;i\le n$, alors la fraction continue est dite \textit{simple}.}
+\end{Def}">
+<BR>
+
+<P>
+On peut encore écrire cette expression sous la forme plus compacte <!-- MATH
+ $[a_0,a_1,\cdots,a_n]$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$[a_0,a_1,\cdots,a_n]$">. Les nombres réels <IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$a_i$"> sont appelés <I>quotients partiels</I> de la fraction continue et les nombres <!-- MATH
+ $c_k = [a_0,a_1,\cdots,a_k]$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$c_k = [a_0,a_1,\cdots,a_k]$"> avec <IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$0\le k\le n$"> sont appelés <I>convergents</I> de la fraction continue.
+
+<P>
+Nous savons maintenant ce qu'est une fraction continue, il est clair que l'intérêt de ces objets mathématiques resterait vraiment limité si les expressions du type donné ci-dessus n'apparaissaient que rarement dans la nature. En fait, nous allons voir qu'il est possible d'écrire tout nombre rationnel sous la forme d'une fraction continue. Quelle est la procédure à suivre pour se rendre compte de ce fait, allons-nous devoir utiliser une méthode lourde et compliquée issue de développements récents en théorie des nombres ? 
+
+<P>
+La réponse à cette question est non, et en fait l'algorithme d'Euclide (300 ACN) est la procédure à utiliser, de plus cette méthode va nous permettre de trouver une écriture sous forme de fraction continue simple du nombre rationnel. Comme un exemple vaut parfois mieux qu'un long discours, voici l'écriture du nombre rationnel <!-- MATH
+ $24/13 = 1.84615...$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$24/13 = 1.84615...$">.
+
+<P>
+Utilisons l'algorithme d'Euclide avec les nombres <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$24$"> et <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$13$">, on obtient successivement les égalités suivantes,
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+24 &= &1\times 13 + 11 \\
+13 &= &1\times 11 + 2 \\
+11 &= &5\times 2 + 1 \\
+2 &= &2\times 1 + 0,
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="147" HEIGHT="109" BORDER="0"
+ SRC="img24.png"
+ ALT="\begin{eqnarray*}
+24 &amp;= &amp;1\times 13 + 11 \\
+13 &amp;= &amp;1\times 11 + 2 \\
+11 &amp;= &amp;5\times 2 + 1 \\
+2 &amp;= &amp;2\times 1 + 0,
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+ce qui nous assure entre autres que <!-- MATH
+ $\pgcd(24,13) = 1$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\pgcd(24,13) = 1$">; il est alors clair que <!-- MATH
+ $24/13 = [1,1,5,2]$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$24/13 = [1,1,5,2]$">. Non ? D'accord, voici une étape supplémentaire,
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\frac{24}{13} &= &1 + \frac{11}{13} = 1 + \frac{1}{\displaystyle \frac{13}{11}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{2}{11}} = 1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{11}{2}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 5 + \frac{1}{2}}}.
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="260" HEIGHT="230" BORDER="0"
+ SRC="img27.png"
+ ALT="\begin{eqnarray*}
+\frac{24}{13} &amp;= &amp;1 + \frac{11}{13} = 1 + \frac{1}{\displaysty...
+...c{1}{\displaystyle 1 + \frac{1}{\displaystyle 5 + \frac{1}{2}}}.
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Remarquons alors que l'écriture traditionnelle, en base <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$10$">, du nombre <IMG
+ WIDTH="48" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$24/13$"> est un nombre décimal illimité périodique, or, puisque l'algorithme d'Euclide fonctionne pour tout entier et se termine toujours, il n'est pas difficile de se rendre compte que les fractions continues nous donnent le moyen d'écrire tout nombre rationnel sous une forme qui est limitée.
+
+<P>
+A ce niveau de notre exposé, nous sommes capables de donner un algorithme efficace permettant de déterminer l'écriture sous forme de fraction continue simple de tout nombre rationnel.
+
+<P>
+<BR>
+<A NAME="AlgFC"></A><IMG
+ WIDTH="555" HEIGHT="199" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="\begin{Alg}[Fractions continues]{
+}{Soit $q\in\mathbb{Q}$, les quotients partiel...
+...0\le k\le n$\ et $n$\ le plus petit naturel tel que $\theta_n = a_n$.}
+\end{Alg}">
+<BR>
+
+<P>
+La fonction <!-- MATH
+ $\lfloor x\rfloor$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$\lfloor x\rfloor$"> (<!-- MATH
+ $x\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$x\in\mathbb{R}$">) est le plus grand entier inférieur ou égal à <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$x$">. L'algorithme ci-dessus résulte simplement d'une reformulation de l'algorithme d'Euclide.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html51"
+  HREF="ArticleMP.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html45"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html54"
+  HREF="node4.html">Approximation des nombres rationnels</A>
+<B> monter:</B> <A NAME="tex2html52"
+  HREF="ArticleMP.html">Petite étude des fractions</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html46"
+  HREF="node2.html">Un petit problème de</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2005-09-23
+</ADDRESS>
+</BODY>
+</HTML>

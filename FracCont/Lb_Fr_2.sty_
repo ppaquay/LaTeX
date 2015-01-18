@@ -1,0 +1,215 @@
+\oddsidemargin .2in					% Marge de gauche sur les pages impaires
+\evensidemargin .01in
+\marginparwidth =1in
+\textwidth 6.2in
+\topmargin 5mm
+\textheight 670pt
+\advance\topmargin by -\headheight
+\advance\topmargin by -\headsep
+
+\def\N{{\rm I\!N}}
+\def\R{{\rm I\!R}}
+\def\F{{\rm I\!F}}
+\def\C{{\rm C\mkern-9.5mu I\mkern3mu}}
+\def\Q{{\rm Q\mkern-9.5mu I\mkern3mu}}
+\def\Nu{{\cal N}_U}
+\def\Dem{{\it D\'emonstration. }}
+\def\Exe{{\bf Exemple}}
+\def\Rem{{\bf Remarque}}
+
+\def\today{\number\day\space\ifcase\month\or
+  janvier\or fÈvrier\or mars\or avril\or mai\or juin\or
+  juillet\or ao\˚t\or septembre\or octobre\or novembre\or dÈcembre\fi
+  \space\number\year}
+
+\def\chaptername{Chapitre}
+\def\contentsname{Table des mati\Ëres}
+\def\listfigurename{Liste des figures}
+\def\listtablename{Liste des tables}
+\def\bibname{Bibliographie}
+\def\appendixname{Appendice}
+\def\partname{Partie}
+
+\def\relstack#1#2{\mathrel{\mathop{#1}\limits_{#2}}}    % inverse stackrel
+
+\newcommand{\Z}{\hbox{{\it Z\hskip-4ptZ\hskip1pt}\,}}     % ensemble Z
+\newcommand{\izit}{\hbox{{\scriptsize \it Z\hskip-3ptZ\hskip1pt}}}
+\newcommand{\tzit}{\hbox{{\it Z\hskip-5ptZ\hskip1pt}\,}}
+\newcommand{\ezit}{\hbox{{\it Z\hskip-6ptZ\hskip1pt}\,}}
+
+\newcommand{\È}{\'e}
+\newcommand{\Ë}{\`e}
+\newcommand{\‡}{\`a}
+\newcommand{\˘}{\`u}
+\newcommand{\Í}{\^e}
+\newcommand{\Ù}{\^o}
+\newcommand{\‚}{\^a}
+\newcommand{\˚}{\^u}
+\newcommand{\Ó}{\^{\i}}
+\newcommand{\Î}{\"e}
+\newcommand{\‰}{\"a}
+\newcommand{\Ô}{\"{\i}}
+\newcommand{\¸}{\"u}
+\newcommand{\Á}{\c{c}}
+\newcommand{\ˆ}{\"o}
+
+%\def\@chapapp{Chapitre}			% modifie chapter en chapitre
+
+%**** ceci, lors d'un 'enumerate' donne (i) (ii) (iii) ... au lieu de (1) (2) ... ****
+\def\theenumi{(\roman{enumi})}
+
+
+%**** ceci, lors d'un 'enumerate' donne 1) 2) 3) ... en gras****
+%\def\theenumi{{\bf \arabic{enumi})}}
+
+%\newtheorem {Def}{D\'efinition}[chapter]		% soumet le compteur def au compteur chapter
+
+\newtheorem {Defa}[subsubsection]{D\'efinition}
+\newtheorem {Defsa}[subsubsection]{D\'efinitions}
+\newtheorem {Lema}[subsubsection]{Lemme}
+\newtheorem {Thea}[subsubsection]{Th\'eor\`eme}
+\newtheorem {Proa}[subsubsection]{Proposition}
+\newtheorem {Expa}[subsubsection]{Exemple}
+\newtheorem {Expsa}[subsubsection]{Exemples}
+\newtheorem {Alga}[subsubsection]{Algorithme}
+\newtheorem {Cora}[subsubsection]{Corollaire}
+\newtheorem {Rmqa}[subsubsection]{Remarque}
+\newtheorem {Rmqsa}[subsubsection]{Remarque}
+\newtheorem {Nota}[subsubsection]{Notation}
+\newtheorem {Axia}[subsubsection]{Axiome}
+
+\newtheorem {Def}[subsection]{D\'efinition}
+\newtheorem {Defs}[subsection]{D\'efinitions}
+\newtheorem {Lem}[subsection]{Lemme}
+\newtheorem {The}[subsection]{Th\'eor\`eme}
+\newtheorem {Pro}[subsection]{Proposition}
+\newtheorem {Exp}[subsection]{Exemple}
+\newtheorem {Exps}[subsection]{Exemples}
+\newtheorem {Alg}[subsection]{Algorithme}
+\newtheorem {Cor}[subsection]{Corollaire}
+\newtheorem {Rmq}[subsection]{Remarque}
+\newtheorem {Rmqs}[subsection]{Remarque}
+\newtheorem {Not}[subsection]{Notation}
+\newtheorem {Axi}[subsection]{Axiome}
+
+\renewcommand {\Re}{{\cal R}}
+\renewcommand {\Im}{{\cal I}}
+
+%**** la ligne suivante dÇfinit l'interligne (1.0 = interligne standard) ****
+\renewcommand {\baselinestretch}{1.1}
+
+\newcommand{\ital}[1]{{\em #1\/}}
+
+\def\mod{\mathop{\rm mod}}
+\def\scal#1#2{\langle{#1},{#2}\rangle}             	% Produit scalaire
+\def\dyade#1#2{\rangle{#1},{#2}\langle}            	% Dyade
+\def\envl#1{\rangle{#1}\langle}		    	% Enveloppe lineaire
+\def\envc#1{\langle\langle{#1}\rangle\rangle} 	% Enveloppe convexe
+\def\ker#1{\mathop{\rm ker}({#1})}              	% Kernel
+\def\im#1{\mathop{\rm im}({#1})}        		% Image
+\def\rang#1{\mathop{\rm rg}({#1})}     		% Rang(...)
+\def\rg{\mathop{\rm rg}}    			% Rang
+\def\det#1{\mathop{\rm det}({#1})}        		% Determinant
+\def\dtm{\mathop{\rm det}}        			% Determinant
+\def\tr#1{\mathop{\rm tr}({#1})}             		% Trace
+\def\Dim#1{\mathop{\rm dim}({#1})}              	% Dimension
+\def\dim{\mathop{\rm dim}}  			% Dimension
+\def\codim#1{\mathop{\rm codim}({#1})}            	% codimension
+\def\vide{\mathop{\mbox{\O}}}			% Ensemble vide
+\def\grad{\mathop{\rm grad}}			% Gradiant
+\def\diverg{\rm div}      				% Divergence
+\def\diag{\mathop{\rm diag}}			% diagonal matrix
+\def\Diag#1{\mathop{\rm diag}({#1})}		% diagonal matrix
+\def\supp#1{\mathop{\rm supp}({#1})}		% support
+\def\off#1{\mathop{\rm off}({#1})}		% off
+\def\Ai{\mathop{\rm Ai}}			% Ai
+\def\WF{\mathop{\rm WF}}			% WF
+\def\sgn#1{\mathop{\rm sgn}({#1})}		% sign
+\def\modg#1{\left\langle{#1}\right\rangle}	% (1+|x|^2)^{1/2}
+\def\tg{\mathop{\rm tg}\nolimits}    			% tangente
+\def\loc{{\mathop{\rm loc}}}    			% loc
+\def\sh{\mathop{\rm sh}\nolimits}  			% sh
+\def\ch{\mathop{\rm ch}\nolimits}       		% ch
+\def\sp#1{\mathop{\rm sp}({#1})}             		% spectre
+\def\sec{\mathop{\rm sec}\nolimits}  			% sec
+\def\sech{\mathop{\rm sech}\nolimits}  			% sech
+\def\cosec{\mathop{\rm cosec}\nolimits} 		% cosec
+\def\cosech{\mathop{\rm cosech}\nolimits} 		% cosech	
+\def\cis{\mathop{\rm cis}\nolimits}		
+\def\arctg{\mathop{\rm arctg}\nolimits}
+\def\var{\mathop{\rm var}\nolimits}
+\def\cov{\mathop{\rm cov}\nolimits}
+\def\hypo{\mathop{\rm Hypo}\nolimits}
+\def\max{\mathop{\rm max}\nolimits}
+\def\mod{\mathop{\rm mod}\nolimits}
+\def\div{\mathop{\rm div}\nolimits}
+\def\pgcd{\mathop{\rm pgcd}\nolimits}
+\def\ppcm{\mathop{\rm ppcm}\nolimits}
+\def\Orb{\mathop{\rm Orb}\nolimits}
+\def\Stab{\mathop{\rm Stab}\nolimits}
+\def\car#1{\mathop{\rm car}({#1})}
+
+% sup and inf with fixed shift
+% \inf_{\dim{L} = n} remplacé par \ysup{\dim{L} = n}
+
+\def\myinf{\mathop{\rule[-0.6ex]{0ex}{2ex}\mbox{\rm inf}}}
+\def\mysup{\mathop{\rule[-0.6ex]{0ex}{2ex}\mbox{\rm sup}}}
+\newcommand{\yinf}[1]{\myinf\limits_{\rule[-1.7ex]{0ex}{3.4ex}{#1}}}
+\newcommand{\ysup}[1]{\mysup\limits_{\rule[-1.7ex]{0ex}{3.4ex}{#1}}}
+
+\def\mCritVal{\mathop{\rule[-0.6ex]{0ex}{2ex}\mbox{v.c.}}}
+\newcommand{\CritVal}[1]{\mCritVal\limits_{\rule[-1.7ex]{0ex}{0.8ex}{#1}}}
+
+\newcommand{\pict}[3]                     									% permet d'insérer un picture PICT
+  {\mbox{\rule{0in}{#2}\special{picture #3}\hspace{#1}}}
+
+%\newenvironment{Dem}{{\it D\'emonstration.}}{$\Box$}				% Environement \begin{Dem} ... \end{Dem}
+
+%4-11-90  L'argument optionnel de l'env. theorème n'est plus entre parenthèses
+%\def\@opargbegintheorem#1#2#3{\it \trivlist \item[\hskip \labelsep{\bf #1\ #2\ #3}]}
+
+% PICTURE
+% pictfile signifie que un PICT externe doit etre utilise,
+% illustration signifie qu'un fichier externe EPSF doit etre utilise,
+%		ceci fonctionne avec le mathematica 2.01 (copy et convert clipboard to EPSF)
+% picture signifie qu'une picture collee dans le document doit etre utilise.
+
+% Pour placer une figure : les arguments sont les dimensions precisees par le 
+% fichier pictures et le nom donne a la figure
+\newcommand{\centerpict}[3]
+{\begin{center}\mbox{\rule{0in}{#2}\special{picture #3}\hspace{#1}}\end{center}}
+
+% idem avec facteur d'echelle pour quatrieme argument (1000=1)
+\newcommand{\scaledpict}[4]
+{\dimen1=#1 \divide\dimen1 by 1000 \multiply\dimen1 by #4
+\dimen2=#2 \divide\dimen2 by 1000 \multiply\dimen2 by #4
+\begin{center}\mbox{\rule{0in}{\dimen2}\special{picture #3 scaled #4}
+\hspace{\dimen1}}\end{center}}
+
+\newcommand{\scaledpictfile}[4]
+{\dimen1=#1 \divide\dimen1 by 1000 \multiply\dimen1 by #4
+\dimen2=#2 \divide\dimen2 by 1000 \multiply\dimen2 by #4
+\begin{center}\mbox{\rule{0in}{\dimen2}\special{pictfile #3 scaled #4}
+\hspace{\dimen1}}\end{center}}
+
+% same with an extern EPSF file
+\newcommand{\scaledillustr}[4]
+{\dimen1=#1 \divide\dimen1 by 1000 \multiply\dimen1 by #4
+\dimen2=#2 \divide\dimen2 by 1000 \multiply\dimen2 by #4
+\begin{center}\mbox{\rule{0in}{\dimen2}\special{illustration #3 scaled #4}
+\hspace{\dimen1}}\end{center}}
+
+\newcommand{\centerill}[3]
+{\begin{center}\mbox{\rule{0in}{#2}\special{illustration #3}\hspace{#1}}\end{center}}
+
+%\def\thebibliography#1{\section*{Bibliographie\@mkboth
+ %{BIBLIOGRAPHIE}{BIBLIOGRAPHIE}}\list
+ %{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin
+%\labelwidth
+ %\advance\leftmargin\labelsep
+ %\usecounter{enumi}}
+ %\def\newblock{\hskip .11em plus .33em minus .07em}
+ %\sloppy\clubpenalty4000\widowpenalty4000
+ %\sfcode`\.=1000\relax}
+%\let\endthebibliography=\endlist
+%\roman{enumi}

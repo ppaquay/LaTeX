@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fractions continues infinies</TITLE>
+<META NAME="description" CONTENT="Fractions continues infinies">
+<META NAME="keywords" CONTENT="ArticleMP">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ArticleMP.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html85"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html83"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html77"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html86"
+  HREF="node7.html">Nombres irrationnels non quadratiques</A>
+<B> monter:</B> <A NAME="tex2html84"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html78"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00051000000000000000">
+Fractions continues infinies</A>
+</H2>
+
+<P>
+Jusqu'ici nous nous sommes contentés de donner l'écriture de nombres rationnels sous forme de fractions continues (simples) et nous avons constaté que cette écriture est finie, mais qu'en est-il des nombres irrationnels, est-il possible de leur donner une écriture sous forme de fraction continue ?
+
+<P>
+La réponse à cette question est encore positive, cependant cette écriture ne sera évidemment plus finie. Voici donc un premier problème, une fraction continue infinie a-t-elle un sens ? Pour résoudre ce problème, il est nécessaire d'avoir la proposition suivante.
+
+<P>
+<BR>
+<IMG
+ WIDTH="556" HEIGHT="91" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="\begin{Pro}{Si $(a_m)_{m\in\mathbb{N}}$\ est une suite d'entiers tels que $a_m&gt;0...
+...rac{p_m}{q_m} = [a_0,a_1,\cdots,a_m]\end{displaymath}est convergente.}
+\end{Pro}">
+<BR> 
+
+<P>
+Nous pouvons alors donner du sens à la notion de fraction continue infinie grâce à la définition suivante.
+
+<P>
+<BR>
+<IMG
+ WIDTH="556" HEIGHT="89" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="\begin{Def}{\rm Soit $(a_m)_{m\in\mathbb{N}}$\ une suite d'entiers tels que $a_m...
+...ymath}\lim_{m\rightarrow\infty}[a_0,a_1,\cdots,a_m].\end{displaymath}}
+\end{Def}">
+<BR>
+
+<P>
+On écrit encore cette expression sous la forme <!-- MATH
+ $[a_0,a_1,a_2,\cdots]$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$[a_0,a_1,a_2,\cdots]$">. Comme dans le cas fini, les nombres <IMG
+ WIDTH="26" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$a_m$"> sont appelés les <I>quotients partiels</I> et les nombres <!-- MATH
+ $c_m = [a_0,a_1,\cdots,a_m]$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$c_m = [a_0,a_1,\cdots,a_m]$"> sont appelés les <I>convergents</I> de la fraction continue.
+
+<P>
+On peut alors prouver qu'il est possible d'écrire tout nombre irrationnel comme une fraction continue infinie. Tout se passe alors pour le mieux et on constate que les convergents ont exactement la signification attendue, à savoir qu'ils convergent vers la fraction continue infinie. Cependant, comment donner une écriture sous forme de fraction continue infinie à un nombre irrationnel ? La solution est encore donnée par l'algorithme d'Euclide, mais appliqué cette fois à des nombres non rationnels, la terminaison de l'algorithme n'est alors plus garantie.
+
+<P>
+Pour mieux visualiser cela essayons de donner l'écriture sous forme de fraction continue du nombre <IMG
+ WIDTH="28" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\sqrt{3}$">. Utilisons alors l'algorithme d'Euclide avec les nombres <IMG
+ WIDTH="28" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\sqrt{3}$"> et <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$1$">.
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\sqrt{3} &= &\underbrace{\lfloor\sqrt{3}\rfloor}_{= 1}\times 1 + (\sqrt{3} - 1) \\
+1 &= &\underbrace{\left\lfloor\frac{1}{\sqrt{3} - 1}\right\rfloor}_{= 1}\times(\sqrt{3} - 1) + \underbrace{(1 - 1\times(\sqrt{3} - 1))}_{= 2 - \sqrt{3}} \\
+\sqrt{3} - 1 &= &\underbrace{\left\lfloor\frac{\sqrt{3} - 1}{2 - \sqrt{3}}\right\rfloor}_{= 2}\times(2 - \sqrt{3}) + \underbrace{(\sqrt{3} - 1 - 2\times(2 - \sqrt{3}))}_{= 3\sqrt{3} - 5} \\
+2 - \sqrt{3} &= &\underbrace{\left\lfloor\frac{2 - \sqrt{3}}{3\sqrt{3} - 5}\right\rfloor}_{= 1}\times(3\sqrt{3} - 5) + \underbrace{(2 - \sqrt{3} - 1\times(3\sqrt{3} - 5))}_{7 - 4\sqrt{3}} \\
+3\sqrt{3} - 5 &= &\underbrace{\left\lfloor\frac{3\sqrt{3} - 5}{7 - 4\sqrt{3}}\right\rfloor}_{= 2}\times(7 - 4\sqrt{3}) + (3\sqrt{3} - 5 - 2\times(7 - 4\sqrt{3})) \\
+7 - 4\sqrt{3} &= &\cdots
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="508" HEIGHT="402" BORDER="0"
+ SRC="img61.png"
+ ALT="\begin{eqnarray*}
+\sqrt{3} &amp;= &amp;\underbrace{\lfloor\sqrt{3}\rfloor}_{= 1}\times 1...
+...rt{3} - 5 - 2\times(7 - 4\sqrt{3})) \\
+7 - 4\sqrt{3} &amp;= &amp;\cdots
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+On a alors le développement suivant,
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\sqrt{3} &= &1 + \frac{1}{\displaystyle \frac{1}{\sqrt{3} - 1}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{\sqrt{3} - 1}{2 - \sqrt{3}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle \frac{2 - \sqrt{3}}{3\sqrt{3} - 5}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle \frac{3\sqrt{3} - 5}{7 - 4\sqrt{3}}}}}} \\
+&= &1 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \cdots}}}}.
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="267" HEIGHT="513" BORDER="0"
+ SRC="img62.png"
+ ALT="\begin{eqnarray*}
+\sqrt{3} &amp;= &amp;1 + \frac{1}{\displaystyle \frac{1}{\sqrt{3} - 1}...
+...frac{1}{\displaystyle 1 + \frac{1}{\displaystyle 2 + \cdots}}}}.
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+Ce qui donne que <!-- MATH
+ $\sqrt{3} = [1,1,2,1,2,1,2,\cdots]$
+ -->
+<IMG
+ WIDTH="196" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$\sqrt{3} = [1,1,2,1,2,1,2,\cdots]$">. Bien sûr, nous aurions pu trouver les quotients partiels en faisant appel à l'algorithme&nbsp;<A HREF="node3.html#AlgFC">3.2</A>, mais l'utilisation de l'algorithme d'Euclide est plus visuelle<A NAME="tex2html5"
+  HREF="footnode.html#foot495"><SUP>3</SUP></A>.
+
+<P>
+Les lecteurs attentifs auront sans doute remarqué que le développement en fraction continue de <IMG
+ WIDTH="28" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\sqrt{3}$"> présente un motif répétitif, une <I>période</I>, qui serait dans notre cas <IMG
+ WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$1,2$">, pour attirer l'attention sur ce fait, on écrit la fraction continue par
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sqrt{3} = [1,\overline{1,2}].
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="100" HEIGHT="31" BORDER="0"
+ SRC="img65.png"
+ ALT="\begin{displaymath}\sqrt{3} = [1,\overline{1,2}].\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Voici un détail intéressant, qui est cependant peut-être le fruit du hasard; examinons pour fixer les idées le développement en fractions continues du `nombre d'or' <!-- MATH
+ $\phi = (1 + \sqrt{5})/2$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$\phi = (1 + \sqrt{5})/2$">. On obtient, après un développement similaire à celui de <IMG
+ WIDTH="28" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\sqrt{3}$"> que
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\phi = \frac{1 + \sqrt{5}}{2} = [1,\overline{1}].
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="151" HEIGHT="46" BORDER="0"
+ SRC="img67.png"
+ ALT="\begin{displaymath}\phi = \frac{1 + \sqrt{5}}{2} = [1,\overline{1}].\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Si on calcule les <IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$p_k$"> et <IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$q_k$"> pour <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\phi$">, on voit apparaître
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p_k = 1,2,3,5,8,13,21,34,55,...\mbox{ et }q_k = 1,1,2,3,5,8,13,21,34,...,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="497" HEIGHT="30" BORDER="0"
+ SRC="img69.png"
+ ALT="\begin{displaymath}p_k = 1,2,3,5,8,13,21,34,55,...\mbox{ et }q_k = 1,1,2,3,5,8,13,21,34,...,\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+que l'on reconnaît comme étant des nombres de Fibonacci.
+
+<P>
+Pour le nombre <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\phi$"> aussi, on détecte une période, avons-nous trouvé une écriture périodique des nombres irrationnels ? Malheureusement, ce n'est pas le cas, en fait il est possible de prouver que l'on peut donner une écriture semblable pour tout nombre irrationnel quadratique, c'est-à-dire tout nombre irrationnel solution d'une équation du second degré à coefficients entiers. Ce qui est le cas de <IMG
+ WIDTH="28" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\sqrt{3}$"> qui est solution de l'équation <IMG
+ WIDTH="84" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$x^2 - 3 = 0$"> et <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\phi$"> qui est solution de <!-- MATH
+ $x^2 - x - 1 = 0$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$x^2 - x - 1 = 0$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html85"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html83"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html77"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A>   
+<BR>
+<B> suivant:</B> <A NAME="tex2html86"
+  HREF="node7.html">Nombres irrationnels non quadratiques</A>
+<B> monter:</B> <A NAME="tex2html84"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<B> pr&eacute;c&eacute;dent:</B> <A NAME="tex2html78"
+  HREF="node5.html">Approximation des nombres irrationnels</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2005-09-23
+</ADDRESS>
+</BODY>
+</HTML>

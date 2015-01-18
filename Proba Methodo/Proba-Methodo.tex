@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pierre}
+%\usepackage{graphicx}
+%\usepackage{float}
+\usepackage{amssymb}
+
+\title{\textbf{Peut-on sortir du cadre des approches traditionnelles dans l'enseignement de la théorie des probabilités ?}}
+\author{\textbf{P. Paquay, \textsl{H.E.L. - Catégorie pédagogique}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Lors de mon entrée à la catégorie pédagogique de la \textsl{Haute École de la Ville de Liège (H.E.L.)}, j'ai eu la charge du cours de \textit{Traitement des données/Statistiques et probabilités} destiné aux futurs bacheliers agrégés de l'enseignement secondaire inférieur en mathématiques. J'ai donc été amené entre-autres à construire un cours de théorie des probabilités pertinent pour ce public assez particulier.
+
+La difficulté principale dont j'ai dû tenir compte lors de ce processus est la diversité des parcours scolaires des étudiants de cette section; en effet, contrairement à ce que l'on pourrait supposer a priori, les étudiants que nous accueillons dans cette section ne proviennent pas exclusivement de l'enseignement secondaire général et n'ont que rarement bénéficié de plus de quatre heures de mathématiques par semaine\footnote{Nous comptons fréquemment parmi nos étudiants de première année des élèves issus de l'enseignement technique de transition ou de qualification et des élèves de l'enseignement général n'ayant suivi que deux heures de mathématiques par semaine}.
+
+Cette difficulté fut bien sûr un élément clé lors de la rédaction des objectifs que je vise avec ce cours de théorie des probabilités; le premier objectif compte tenu des circonstances est donc de réviser et d'étendre les notions basiques de théorie des probabilités, le second est quant à lui de proposer une méthodologie pertinente et pouvant être transférée lors de la construction de leurs activités mathématiques sur le terrain.
+
+Mon réflexe initial fut donc de consulter les référentiels officiels de la Communauté française de Belgique et en particulier les compétences terminales. Dans la section concernant le traitement des données, une phrase en particulier a attiré mon attention :
+\textit{``Le but n'est pas de construire des modèles mathématiques sophistiqués. Au contraire, on adopte une démarche expérimentale,
+intuitive, en utilisant largement les moyens modernes de calcul.''}\footnote{\textit{Compétences terminales et savoir requis en mathématiques}}
+Or, dans la plupart des manuels scolaires, j'ai pu remarquer que l'approche privilégiée était très souvent l'approche axiomatique de Kolmogorov qui, bien qu'étant une avancée immense dans l'histoire du calcul des probabilités, ne remplissait selon moi pas suffisamment l'idéal intuitif et expérimental prôné par le programme officiel. J'ai donc fait le choix de tester une approche méthodologique anglo-saxonne adaptée pour mon public d'étudiants qui me semblait mieux rencontrer cette demande d'intuition et d'expérimentation.
+
+Dans la suite de cet article je vais ainsi passer en revue les différentes approches que j'ai examinées lors de mes recherches et examiner le contexte historique de leur création et les principes mathématiques sous-jacents qui ont présidés à leur création. J'exposerai également les critiques tant mathématiques que méthodologiques et aussi bien négatives que positives que ces approches ont engendrées. Je terminerai alors en motivant mon choix d'une approche intuitive et en exposant brièvement les constatations et les réflexions que l'application de cette méthodologie une année académique durant a pu générer.
+
+L'intégralité de mon propos dans cet article concerne le cours de théorie des probabilités dispensé aux étudiants de première année en bachelier-agrégé de l'enseignement secondaire inférieur en mathématiques lors de l'année académique 2012-2013; il me faut encore préciser que ce cours de première année est restreint aux probabilités sur des espaces discrets (finis ou dénombrables).
+
+
+\section{L'approche classique}
+
+\subsection{Contexte historique}
+
+Une question fréquemment posée en histoire des mathématiques est celle-ci : pourquoi a-t-il fallu attendre le seizième siècle pour observer un réel développement de la théorie des probabilités ? Nous savons pourtant que les jeux de chance et les paris remontent à des temps immémoriaux. Par exemple en Égypte ancienne, à l'époque de le Première Dynastie\footnote{Aux alentours de $3500$ avant Jésus-Christ.} existait un jeu actuellement appelé ``Chiens et Chacals'' dans lequel le mouvement des pièces était déterminé par le résultat du lancer d'un dé à quatre faces fait de matière osseuse animale appelé astragali. Les paris étaient également très fréquents en Grèce et en Rome antiques puisque des lois pour limiter leur usage furent mises en place à cette époque. Dès lors, pourquoi ne trouve-t-on pas de traces de calculs en lien avec les probabilités avant le seizième siècle ?
+
+Un premier élément de réponse à cette question serait l'aspect pratique; les notions mathématiques nécessaires n'étaient alors pas encore suffisamment développées. En effet, les systèmes de numération antiques rendaient les calculs très compliqués. Un deuxième élément de réponse serait l'aspect religieux; à l'époque, la majorité des activités liées au hasard concernaient des loteries en rapport avec des affaires religieuses. On pourrait donc penser que certaines barrières religieuses furent érigées contre une étude systématique du hasard et des jeux. Un troisième élément de réponse est qu'il aurait fallu attendre un incitant suffisamment fort tel que le développement du commerce pour donner l'impulsion nécessaire au démarrage de la formalisation des probabilités. Cependant, aucune de ces trois explications ne semble entièrement satisfaisante et la question reste donc toujours en suspens.
+
+Une première tentative remarquable de systématisation du calcul des probabilités fut faite par Gerolamo Cardano (1501-1576) dans son ouvrage \textit{Liber de Ludo Aleae}. Dans ce livre, Cardano traite exclusivement le cas d'évènements équiprobables. Il pose déjà à l'époque que la probabilité qu'un évènement se réalise est le ratio du nombre de cas favorables au nombre de cas possibles.
+
+Pourtant, le travail de Cardano ne fut pas encore l'étincelle qui déclencha une étude systématique du sujet. Il fallut pour cela attendre la fameuse série de lettres entre Blaise Pascal (1623-1662) et Pierre Fermat (1601-1665) qui fut initiée par le premier pour répondre à des problèmes posés par le Chevalier de Méré, une personnalité importante de la cour de Louis XIV et un joueur invétéré.
+
+La définition classique de la notion de probabilité, bien qu'elle ne sera explicitement formulée que par Pierre-Simon de Laplace (1749-1827) dans son ouvrage \textit{Théorie analytique des probabilités}, emprunte à la fois à Cardano, à Fermat et à Pascal et nous la formulerons comme suit.
+
+\begin{Def}[Classique]{\rm Lors d'un phénomène aléatoire\footnote{Un \textit{phénomène aléatoire} est intuitivement un phénomène dont le résultat est impossible à prédire avec certitude, et qui reproduit plusieurs fois dans des conditions identiques se déroule chaque fois différemment.} dont les $m$ résultats sont mutuellement exclusifs et équiprobables\footnote{Le terme utilisé est plus précisément celui d'\textit{équipossibilité}.} et si $m_E$ parmi ceux-ci possèdent un attribut commun noté $E$\footnote{Dans la terminologie moderne, on qualifiera l'ensemble $E$ d'\textit{évènement}. Nous utiliserons dorénavant cette terminologie dans la suite de cet article.}, alors la probabilité de $E$ est définie comme suit
+\[\mathbb{P}(E) = \frac{m_E}{m}.\]
+}
+\end{Def}
+
+On retient très souvent cette définition sous sa forme synthétique : ``La probabilité de $E$ est égal au ratio du nombre de cas favorables à $E$ sur le nombre de cas possibles''.
+
+Il faut encore mentionner que bien que cette définition fut implicitement utilisée par Cardano, Fermat et Pascal pour résoudre des problèmes liés aux jeux de hasard, ceux-ci n'utilisaient pas encore le terme ``probabilité''; Pascal parle plutôt de ``hasard'', de ``cas favorables'' et qualifie d'ailleurs sa propre théorie de ``géométrie du hasard''.
+
+Cette définition est donc essentiellement une conséquence directe du principe d'équiprobabilité qui est lui-même intimement lié au principe d'indifférence tel qu'il sera formulé par John Maynard Keynes (1883-1946).
+
+\subsection{Principes sous-jacents}
+
+Le principe général qui a présidé à la mise en place de cette définition classique des probabilités est essentiellement celui d'équiprobabilité. Ce principe a pour conséquence que pour calculer une probabilité, il suffit de dénombrer tous les résultats possibles (représentés par le dénominateur dans la définition classique) d'un phénomène aléatoire et séparer ces derniers en cas favorables (représentés cette fois par le numérateur) et défavorables.
+
+Signalons que pour établir en pratique ces dénombrements, Pascal et Fermat développèrent considérablement ce que nous appelons aujourd'hui l'analyse combinatoire.
+
+\subsection{Critiques}
+
+Puisque la définition classique de la notion de probabilité est basée sur le principe d'équiprobabilité, il faut être sûr que celui-ci est valide pour le problème étudié. Cela est bien sûr le cas dans le contexte originel de la création de cette définition, à savoir les problème de jeux. En effet, ceux-ci sont souvent issus du lancer d'un dé (ou d'un autre artefact) possédant des propriétés de symétrie évidentes. Cependant, il est très important de remarquer que ce principe d'équiprobabilité est très rare dans d'autres domaines; citons par exemple la probabilité d'obtention d'un enfant mâle ou femelle lors d'une grossesse. Le principe d'équiprobabilité nous pousserait naturellement à poser ces probabilités comme étant égales à $1/2$; or, il a été montré que la probabilité d'obtention d'un enfant mâle est plus proche de $0.512$ et celle d'un enfant femelle proche de $0.487$. Cet état de fait limite donc considérablement l'application de cette définition classique.
+
+Une autre limite qu'il convient de mentionner est que le nombre de résultats possibles est obligatoirement fini, si nous sommes en présence d'un nombre infini de résultats, la notion de probabilité n'est alors pas définie au sens classique.
+
+Une dernière remarque concernant cette définition est qu'elle est entièrement a priori puisqu'elle est directement déduite de la connaissance de l'ensemble des résultats possibles et des cas favorables; rien ne doit être observé en terme de résultats effectifs pour en déterminer la probabilité.
+
+\subsection{Critiques méthodologiques}
+
+Suite aux limites mentionnées ci-dessus, il est pour moi très clair que cette définition classique ne peut servir de base à un cours même basique de théorie des probabilités; en effet, celle-ci ne peut s'appliquer avec pertinence que dans des cas très limités et peu réalistes en pratique. Cependant, dans les cas restreints où cette définition est applicable, sa simplicité reste un atout puisqu'elle est très facile à retenir sous sa forme synthétique : ``la probabilité est le ratio du nombre de cas favorables sur le nombre de cas possibles''.
+
+La principale difficulté méthodologique demeure donc de faire comprendre aux élèves que cette formulation n'est applicable que dans des cas particuliers très limités et très rarement réalistes; cette difficulté est souvent ardue à surmonter puisqu'il est assez complexe de déterminer quand ce principe d'équiprobabilité est applicable ou non. Cette complexité a malheureusement souvent comme conséquence que les élèves en reviennent à appliquer le principe d'ignorance : ``puisqu'on n'arrive pas à savoir avec certitude si les résultats sont équiprobables ou non, on va supposer que c'est le cas''. Pourtant, malgré ces critiques, je ne pense pas qu'il faille ignorer complètement cette définition classique car celle-ci mène naturellement à l'analyse combinatoire qui a un immense intérêt en tant que théorie à part entière.
+
+Avec mes étudiants et au travers de divers exemples, j'essaie les amener à comprendre que cette définition, qu'ils connaissent souvent suite à leur cours du secondaire, bien que séduisante, ne devra pas être celle qu'ils seront amenés à retenir au final. Il restera alors à générer chez eux le réflexe de toujours vérifier au préalable s'ils peuvent appliquer le principe d'équiprobabilité et, dans l'affirmative uniquement, d'utiliser alors cette définition classique.
+
+
+\section{L'approche fréquentielle}
+
+\subsection{Contexte historique}
+
+Parallèlement aux travaux de Fermat et Pascal au $17$-ème siècle qui ont mené à une définition a priori de la notion de probabilité, Lodewijck Huygens (1631-1699) d'une part et Edmond Halley (1656-1742) d'autre part, se basant tous deux sur les tables de mortalité établies par John Graunt (1620-1674) ont construit une interprétation très différente de cette notion. Cette dernière est basée, contrairement au cas classique, sur l'observation a posteriori de résultats effectifs d'un phénomène aléatoire et plus précisément sur la fréquence relative de ceux-ci. Dans ce contexte, il suffit alors pour déterminer la probabilité d'un évènement de répéter un grand nombre de fois le phénomène aléatoire considéré et de dénombrer parmi ces derniers combien de fois l'évènement étudié s'est réalisé; la probabilité de l'évènement sera alors le ratio du nombre de réalisations effectives sur le nombre total de répétitions.
+
+Ceci nous amène donc à formuler notre définition fréquentielle de la notion de probabilité.
+
+\begin{Def}[Fréquentielle]{\rm Si nous répétons $n$ fois un phénomène aléatoire et si $n_E$ parmi celles-ci résultent en la réalisation d'un évènement $E$, alors la probabilité de l'évènement $E$ est définie comme suit
+\[\mathbb{P}(E) = \frac{n_E}{n}.\]
+}
+\end{Def}
+
+Il est intuitivement clair que plus le nombre de répétitions du phénomène aléatoire est grand, plus nous pourrons être sûrs que la fréquence relative caractérise bien la probabilité de l'évènement considéré.
+
+Jusqu'au début du $18$-ème siècle, nous avons donc deux interprétations de la notion de probabilité\footnote{Notons encore une fois qu'à cette époque le terme ``probabilité'' n'est pas encore utilisé; on lui préfère celui de ``hasard'' dans le cas des jeux et de ``chance (de survie par exemple)'' dans le cas de tables de mortalité.} qui semblent fondamentalement différentes et difficilement conciliables; la première s'applique essentiellement au domaine des jeux de hasard et la seconde à des considérations démographiques. Cette dualité apparente ne fut pas réellement un problème tant que chaque interprétation restait appliquée uniquement à leurs domaines d'étude respectifs; cependant cela ne fut pas le cas très longtemps. Il en résulta donc une certaine confusion qui fut encore renforcée par le fait que l'on introduisit le raisonnement probabiliste dans d'autres domaines comme l'astronomie et la sociologie. Il devint alors nécessaire de développer un concept unifié de la notion de probabilité.
+
+Il fallut pour ce faire attendre 1713 et la publication (à titre posthume) d'un ouvrage fondateur : l'\textit{Ars Conjectandi} de Jacob Bernoulli (1655-1705). Dans ce recueil, Bernoulli établit une relation légitime entre les deux interprétations de la notion de probabilité par le biais de la célèbre ``Loi des grands nombres''. Cette dernière précise les conditions sous lesquelles la probabilité a posteriori correspondant à $n$ observations d'un phénomène aléatoire peut être considérée comme une approximation de la probabilité a priori.
+
+\subsection{Principes sous-jacents}
+
+Cette interprétation fréquentielle de la notion de probabilité repose sur l'idée que la fréquence relative d'occurrence d'un évènement caractérise une certaine tendance intrinsèque de cet évènement à se réaliser. Il devient alors tout à fait naturel de considérer la fréquence relative de réalisation d'un évènement comme évaluant sa tendance à se produire. Ainsi que nous l'avons mentionné, il est intuitivement clair que au plus le nombre $n$ de répétitions est grand, au mieux la fréquence relative calculée va caractériser la probabilité de l'évènement. Au premier abord, on pourrait croire que cette définition contient une faille évidente; rien ne nous garantit formellement que la fréquence relative $n_E/n$ se stabilise à une valeur bien précise lorsque $n$ devient de plus en plus grand. En d'autre termes, pourquoi est-ce que l'expression $n_E/n$ possèderait une limite lorsque $n$ tend vers l'infini et quel sens aurait alors cette limite ?
+
+La réponse à cette question est fournie par la ``Loi des grands nombres''\footnote{Nous nous contenterons ici de la version faible de cette loi, c'est-à-dire celle démontrée par Bernoulli à l'époque.} qui va nous montrer que cette limite existe et qui va également préciser le sens de cette limite.
+
+\begin{The}[Loi des grands nombres]{Considérons $n$ répétitions indépendantes\footnote{Cette hypothèse d'indépendance est très importante, cependant nous en resterons ici au caractère intuitif de cette notion.} d'un même phénomène aléatoire chacune avec la même probabilité a priori $p = m_E/m$ de réalisation d'un évènement $E$. Si $n_E$ représente le nombre de réalisations effectives de l'évènement $E$, alors pour tout $\epsilon>0$ on a
+\[\mathbb{P}\Biggl(\Biggl|\frac{n_E}{n} - p\Biggr|<\epsilon\Biggr)\rightarrow 1\]
+lorsque $n\rightarrow\infty$.}
+\end{The}
+
+En d'autres termes, Bernoulli nous montre avec cette loi qu'il y a bien une stabilisation asymptotique des fréquences relatives et qu'il est ``moralement certain que $n_E/n$ ne dévie pas grandement de $p = m_E/m$ si $n$ est suffisamment grand''. Cela signifie pour lui que la probabilité a posteriori $n_E/n$ est une bonne estimation de la probabilité a priori $p$ lorsque $n$ est suffisamment grand. Dans notre terminologie moderne, nous dirons qu'il a prouvé que $n_E/n$ converge en probabilité vers $p$.
+
+Comme mentionné auparavant, cette loi des grands nombres unifie les interprétations classique et fréquentielle de la notion de probabilité.
+
+En guise d'exemple, traitons le cas du lancer d'une pièce de monnaie. Dans ce cas, la loi des grands nombres nous affirme qu'il est moralement certain que la fréquence relative d'obtention de la valeur Pile aura tendance à long terme à se rapprocher de $1/2$. Il est d'ailleurs très intéressant de vérifier ce fait par une simulation de ce phénomène aléatoire (par ordinateur éventuellement).
+
+Remarquons qu'à l'époque cette loi des grands nombres ne s'applique qu'aux cas où le phénomène aléatoire observé possède des résultats équiprobables; malgré cela, Bernoulli proposait également d'utiliser la fréquence relative comme estimation de la probabilité a priori dans d'autres domaines d'application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage{pierre}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amssymb}
+
+\title{\textbf{L'arithmétique  à l'école normale \textsl{(Titre provisoire)}}}
+\author{\textbf{P. Paquay, \textsl{HEL - Catégorie pédagogique}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Ceci est une introduction avec quelques conseils de lecture...
+
+\section{La construction du concept de nombre}
+
+Depuis que je suis enseignant à la catégorie pédagogique de la HEL, j'ai eu l'occasion de me rendre compte à plusieurs reprises du fait que les étudiants futurs bacheliers-instituteurs avaient souvent une idée fort vague de ce qu'est un nombre naturel. Lorsque je leur demande lors du tout premier cours d'arithmétique de donner une définition d'un nombre (naturel), ils se retrouvent très souvent fort démunis. Lorsque nous essayons ensuite d'analyser ensemble cette notion fondamentale, ils sont au premier abord fort surpris par le fait qu'un nombre est en fait une notion mathématique purement abstraite.
+
+Je pense que leur surprise est due, au moins en partie, au fait qu'ils assimilent souvent l'idée d'abstraction à celle de difficulté. Le concept de nombre leur paraît tellement naturel et familier qu'ils n'ont plus du tout le sentiment de travailler dans l'abstraction. Ainsi, pour les aider à mieux appréhender ce fait, je demande aux étudiants d'effectuer $2 + 3 = 5$; une fois que la réponse a été donnée, je leur demande s'ils ont eu besoin de manipuler des objets (jetons, règlettes, etc), puisqu'ils répondent par la négative, je leur demande ensuite s'ils ont utilisé une représentation mentale particulière (schèmes, etc); comme la réponse est encore négative, il devient clair pour les étudiants qu'ils ont travaillé directement avec des concepts abstraits. Ils ont obtenu la somme demandée à partir d'un raisonnement logico-mathématique et rien d'autre; il s'agit donc bien d'un concept purement abstrait. Bien sûr, les étudiants ont été capables d'effectuer ce calcul sans avoir recours ni à des manipulations concrètes, ni à des représentations semi-concrètes car ils sont passés par ces mêmes étapes lorsqu'ils ont construit la notion de nombre à l'école primaire et, à leur stade de développement cognitif, ils ont pu s'affranchir de ces étapes concrète et semi-concrète pour ne plus garder que l'étape abstraite qui est exactement l'âme de la notion de nombre.
+
+Cette notion de nombre étant une des premières notions abstraites que l'enfant va rencontrer dans son apprentissage des mathématiques, je pense qu'il est indispensable de bien remettre en place ce concept avec les étudiants.
+
+Passons maintenant à la définition de la notion de nombre naturel proprement dit.
+
+\subsection{La correspondance terme à terme}
+
+Avant de pouvoir donner une définition de ce qu'est un nombre naturel, je commence par introduire la \textit{correspondance terme à terme}. Pour ce faire, je prends l'exemple d'un élève de première année primaire qui a pour tâche de distribuer à la classe voisine une invitation pour un goûter organisé par sa classe; une première manière de procéder serait, pour l'élève, de prendre une liste avec les noms de chaque élève de la classe voisine et de lui associer une et une seule invitation. Cela correspond mathématiquement à construire une \textit{correspondance terme à terme}\footnote{On parle aussi de \textit{bijection}.} entre l'ensemble des élèves de la classe voisine et l'ensemble des invitations. La schématisation que j'utilise avec mes étudiants est celle d'un diagramme de Venn.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Corresp1}
+\caption{\textit{La correspondance terme à terme}}
+\end{center}
+\end{figure}
+De la même manière, si maintenant, notre élève désire placer chaque invitation dans une enveloppe, il va créer une correspondance terme à terme entre l'ensemble des invitations et l'ensemble des enveloppes. Nous pouvons visualiser cela dans la figure suivante. Nous voyons alors que ces trois ensembles, les élèves, les invitations et les enveloppes sont aussi en correspondance terme à terme.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Corresp2}
+\caption{\textit{Trois ensembles en correspondance terme à terme}}
+\end{center}
+\end{figure}
+
+Bien sûr, il aurait été beaucoup plus simple pour notre élève\footnote{S'il avait déjà assimilé la notion de nombre.}, plutôt que de construire effectivement ces correpondances terme à terme, d'isoler une propriété commune à ces trois ensembles, à savoir le nombre d'éléments de ces ensembles. En isolant cette propriété, on réalise une abstraction, on met en place un concept, celui de \textit{nombre (naturel)}. Les étudiants et moi, nous arrivons alors à formuler la définition suivante.
+
+\begin{Def}{\rm Un \textit{nombre (naturel)} est la propriété commune à tous les ensembles qui peuvent être mis en correspondance terme à terme.}
+\end{Def}
+
+Pour donner une image de cette définition, je dis souvent aux étudiants que l'on peut voir le nombre $3$ comme étant ce qui reste de $3$ pommes quand on a retiré les pommes. Cela est généralement perçu comme une boutade, mais n'est pas si éloigné de l'idée qu'ils doivent avoir qui est que quand on manipule le nombre $3$, on manipule un concept mathématique abstrait qui peut être particularisé en $3$ pommes, $3$ poires, etc; c'est donc un concept multi-usages qui permet d'effectuer des calculs sans avoir recours à un point de vue plus concret tout en obtenant des résultats qui seront valides peu importe le point de vue choisi.
+
+J'insiste beaucoup sur cette idée avec mes étudiants car, d'une part c'est une notion fondamentale en mathématique et, d'autre part, car pour des futurs professionnels de l'éducation initiale, cela induit une méthodologie qu'ils auront à utiliser à de nombreuses reprises; à savoir la transition de l'aspect concret vers l'abstrait en passant par le semi-concret.
+
+\subsection{Les premiers nombres naturels}
+
+A ce niveau, les étudiants ont une idée assez précise de ce qu'est un nombre naturel, mais nous n'en avons encore exhibé aucun. Pour ce faire, j'ai recours à la construction suivante.
+
+Mon objectif va être de construire des classes d'ensembles en correspondance terme à terme; pour ce faire, je réalise la figure suivante qui représente la classe qui contient tous les ensembles d'objets possibles.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Nombre4}
+\caption{\textit{Des ensembles d'objets}}
+\end{center}
+\end{figure}
+Je demande alors aux étudiants s'ils pourraient trouver une manière de classer ces ensembles; ils en arrivent assez rapidement à les classer selon ceux qui sont en correspodance terme à terme.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Nombre5}
+\caption{\textit{Des ensembles d'objets en correspondance terme à terme}}
+\end{center}
+\end{figure}
+Nous constatons alors que les sous-classes se structurent de la même manière, avec à chaque fois un élément supplémentaire à la précédente. Je leur propose alors d'associer à la première sous-classe le nombre \textit{`un'} qui est aussi le cardinal de chacun des ensembles de cette sous-classe, de la même manière, nous associons à la deuxième sous-classe le nombre \textit{`deux'} qui est ici aussi le cardinal de chacun des ensembles de cette sous-classe. En itérant cette construction, nous avons obtenu les premiers nombres naturels.
+\[\mbox{`un'},\ \mbox{`deux'},\ \mbox{`trois'},\ \mbox{`quatre'},\ \mbox{`cinq'},\ \mbox{etc}.\]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Nombre6}
+\caption{\textit{Les premiers nombres naturels}}
+\end{center}
+\end{figure}
+
+\begin{Rmq}{\rm Le cas du zéro est un peu particulier, je lui trouve une place logique en l'associant à la sous-classe précédant celle associée au nombre \textit{`un'}. Il sera donc associé à la sous-classe contenant uniquement l'ensemble vide.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{Nombre7}
+\caption{\textit{Le nombre `zéro'}}
+\end{center}
+\end{figure}
+}
+\end{Rmq}
+
+Il faut remarquer que, dans ce contexte, nous avons donné un nom aux premiers nombres naturels; mais, d'une part, nous ne sommes pas allés bien loin, et d'autre part, nous n'avons pas encore introduit de notation mathématique pour représenter ceux-ci. Cela est bien sûr tout à fait volontaire, mon but étant ici d'insister sur l'indépendance entre la notion même de nombre (l'objet mathématique) et sa représentation (la notation). Nous verrons d'ailleurs plus loin que la représentation d'un nombre n'est qu'un choix parmi d'autres; choix qui a d'ailleurs souvent été effectué plus pour des raisons historiques que réellement pratiques.
+
+L'idée de cette construction des premiers nombres naturels trouve son origine plus dans la méthodologie que dans les mathématiques elles-même. En effet, mon idée était à l'origine de mettre en évidence encore une fois le fait que le nombre $2$ par exemple englobe l'idée de $2$ carrés, $2$ disques, $2$ triangles, $2$ crayons, etc; c'est-à-dire que la notion de nombre est indépendante du matériel ou de la représentation employé et, de plus, tout résultat obtenu à l'aide d'un matériel ou d'une représentation bien précis est encore valable avec n'importe quel autre. Les étudiants auront donc à essayer de varier ce matériel le plus possible dans le but que leurs futurs élèves soient amenés à travailler directement avec des idées abstraites.
+
+
+
+
+
+\end{document}
